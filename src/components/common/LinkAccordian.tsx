@@ -1,0 +1,47 @@
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import { ChartDataType } from "@/utils/fetchChartsUtils";
+import IconBxRightArrow from "../icons/IconBxRight";
+import IconBxsDownArrow from "../icons/IconBxDownSolid";
+import { usePathname } from "next/navigation";
+import IconDot16 from "../icons/IconDot16";
+
+const textFormattor = (text: string) =>
+  text
+    .split(/[-_]+/)
+    .map((s) => s[0].toUpperCase().concat(s.slice(1)))
+    .join(" ");
+
+const LinkAccordian = ({ linkData }: { linkData: ChartDataType }) => {
+  const pathName = usePathname();
+  const [accState, setAccState] = useState(false);
+  return (
+    <div className="w-full flex flex-col gap-0">
+      <div
+        className="header h-16 bg-zinc-600 border border-zinc-500 flex items-center px-12 justify-between"
+        onClick={() => setAccState((s) => !s)}
+      >
+        <p className="text-md font-medium font-mono">
+          {textFormattor(linkData.chartType)}
+        </p>
+        {accState ? <IconBxsDownArrow /> : <IconBxRightArrow />}
+      </div>
+      {accState && (
+        <div className="content flex flex-col p-0 gap-0 bg-zinc-800">
+          {linkData.charts.map((chart) => (
+            <Link
+              href={`/${linkData.chartType}/${chart}`}
+              key={`/${linkData.chartType}/${chart}`}
+              className="h-12 flex items-center gap-4 hover:bg-zinc-500 px-12"
+            > <IconDot16 width={24} className={pathName === `/${linkData.chartType}/${chart}` ? 'stroke-pink-700 fill-pink-700' : ''} height={24} />
+              {textFormattor(chart)}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default LinkAccordian;
