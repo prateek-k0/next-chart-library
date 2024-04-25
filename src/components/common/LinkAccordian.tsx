@@ -17,12 +17,12 @@ const LinkAccordian = ({ linkData }: { linkData: ChartDataType }) => {
   const pathName = usePathname();
   const [accState, setAccState] = useState(false);
   return (
-    <div className="w-full flex flex-col gap-0">
+    <div className="w-full flex flex-col gap-0 font-sans text-md font-light">
       <div
         className="header h-16 bg-zinc-600 border border-zinc-500 flex items-center px-12 justify-between"
         onClick={() => setAccState((s) => !s)}
       >
-        <p className="text-md font-medium font-mono">
+        <p className="font-normal">
           {textFormattor(linkData.chartType)}
         </p>
         {accState ? <IconBxsDownArrow /> : <IconBxRightArrow />}
@@ -34,7 +34,7 @@ const LinkAccordian = ({ linkData }: { linkData: ChartDataType }) => {
               href={`/${linkData.chartType}/${chart}`}
               key={`/${linkData.chartType}/${chart}`}
               className="h-12 flex items-center gap-4 hover:bg-zinc-500 px-12"
-            > <IconDot16 width={24} className={pathName === `/${linkData.chartType}/${chart}` ? 'stroke-pink-700 fill-pink-700' : ''} height={24} />
+            > <IconDot16 width={24} className={pathName === `/${linkData.chartType}/${chart}` ? 'stroke-pink-600 fill-pink-600' : ''} height={24} />
               {textFormattor(chart)}
             </Link>
           ))}

@@ -11,7 +11,7 @@ const SideBar = ({ fileData, onClose }: { fileData: ChartDataType[], onClose: ()
           fileData.map((chart) => <LinkAccordian linkData={chart} key={chart.chartType} />)
         }
       </div>
-      <div className="backdrop col-span-3 backdrop-blur-sm flex-grow" onClick={onClose}></div>
+      <div className="backdrop col-span-3 backdrop-blur-sm flex-grow cursor-pointer" onClick={onClose}></div>
     </div>
   )
 }

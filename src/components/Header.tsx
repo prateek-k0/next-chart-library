@@ -4,6 +4,9 @@ import IconMenuOutline from "./icons/IconMenuOutline";
 import { ChartDataType } from "@/utils/fetchChartsUtils";
 import SideBar from "./SideBar";
 import IconCross from "./icons/IconsCross";
+import IconHome from "./icons/IconHome";
+import Link from "next/link";
+import IconGithub from "./icons/IconGithub";
 
 const Header = ({ fileData }: { fileData: ChartDataType[] }) => {
   const [sideBarStatus, setSideBarStatus] = useState(false);
@@ -13,13 +16,20 @@ const Header = ({ fileData }: { fileData: ChartDataType[] }) => {
   return (
     <>
       <header className="h-16 bg-zinc-800 border-b border-zinc-600 flex items-center px-12 relative justify-between">
-        <div
-          className="menu-trigger"
-          onClick={() => setSideBarStatus((s) => !s)}
-        >
-          {sideBarStatus ? <IconCross width={32} height={32} /> : <IconMenuOutline width={32} height={32} />}
+        <div className="brand flex items-center gap-4 divide-x">
+          <div
+            className="menu-trigger hover:text-pink-600"
+            onClick={() => setSideBarStatus((s) => !s)}
+          >
+            {sideBarStatus ? <IconCross width={32} height={32} className=" cursor-pointer" /> : <IconMenuOutline width={32} height={32} className="cursor-pointer" />}
+          </div>
+          <Link href="/" className=""><IconHome width={44} height={28} className="pl-4 cursor-pointer hover:text-pink-600" /></Link>
         </div>
-        <p className="brand">Next.js Chart Library</p>
+        <div className="exteral-nav flex items-center gap-4">
+        <Link href="https://github.com/prateek-k0/next-chart-library" target="_blank" className="">
+          <IconGithub width={48} height={48} className="pl-4 cursor-pointer hover:text-pink-600" />
+        </Link>
+        </div>
       </header>
       {sideBarStatus && <SideBar fileData={fileData} onClose={closeHandler} />}
     </>

@@ -1,15 +1,10 @@
 function IconMenuOutline(props: any) {
   return (
-    <svg
-      baseProfile="tiny"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      height="1em"
-      width="1em"
-      {...props}
-      cursor={'pointer'}
-    >
-      <path d="M19 18c.55 0 1 .45 1 1s-.45 1-1 1H5c-.55 0-1-.45-1-1s.45-1 1-1h14m0-2H5c-1.654 0-3 1.346-3 3s1.346 3 3 3h14c1.654 0 3-1.346 3-3s-1.346-3-3-3zm0-5c.55 0 1 .45 1 1s-.45 1-1 1H5c-.55 0-1-.45-1-1s.45-1 1-1h14m0-2H5c-1.654 0-3 1.346-3 3s1.346 3 3 3h14c1.654 0 3-1.346 3-3s-1.346-3-3-3zm0-5c.55 0 1 .45 1 1s-.45 1-1 1H5c-.55 0-1-.45-1-1s.45-1 1-1h14m0-2H5C3.346 2 2 3.346 2 5s1.346 3 3 3h14c1.654 0 3-1.346 3-3s-1.346-3-3-3z" />
+    <svg fill="none" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
+      <path
+        fill="currentColor"
+        d="M4 6a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1zM4 18a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1zM5 11a1 1 0 100 2h8a1 1 0 100-2H5z"
+      />
     </svg>
   );
 }
