@@ -6,7 +6,8 @@ const BrandLogo = () => {
   const height = 512;
   const width = 512;
 
-  const accentColors = useMemo(() => ["#ff00cf", "#00c0ff"], []);
+  const accentColors = useMemo(() => ["#06b6d4", "#e11d48"], []);
+  const hoverColor = useMemo(() => ["#0c4a6e", "#9d174d"], []);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const renderPieChart = useCallback(
@@ -28,15 +29,20 @@ const BrandLogo = () => {
         .attr("clip-path", "url(#pie-clip-rect)");
 
       const pieChartData: any[] = [
-        { value: 30, radius: 20, fill: accentColors[0] },
-        { value: 10, radius: 0, fill: accentColors[1] },
-        { value: 20, radius: 10, fill: accentColors[0] },
+        { value: 25, radius: 16, fill: accentColors[0], fillHover: hoverColor[0] },
+        { value: 10, radius: 0, fill: accentColors[1], fillHover: hoverColor[1] },
+        { value: 15, radius: 8, fill: accentColors[0], fillHover: hoverColor[0] },
       ];
       const radius = height / 2 - 50;
       const arc: any = d3
         .arc()
         .innerRadius(radius - 20)
         .outerRadius((d: any) => radius + d.data.radius)
+        .padAngle(0.025);
+      const arcHover: any = d3
+        .arc()
+        .innerRadius(radius - 20)
+        .outerRadius((d: any) => radius + d.data.radius + 10)
         .padAngle(0.025);
       const arcInner: any = d3
         .arc()
@@ -58,7 +64,20 @@ const BrandLogo = () => {
       pieGroup
         .append("path")
         .attr("d", arc)
-        .attr("fill", (d: any) => d.data?.fill);
+        .attr("fill", (d: any) => d.data?.fill)
+        .on('mouseenter', function(this: any) {
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr('d', arcHover)
+            .attr('fill', (d: any) => d.data?.fillHover);
+        }).on('mouseleave', function(this: any) {
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr('d', arc)
+            .attr("fill", (d: any) => d.data?.fill) ;
+        });
       pieChartGroup
         .append("g")
         .selectAll("path")
@@ -74,6 +93,7 @@ const BrandLogo = () => {
       const bubbleRadius = radius / 2;
       bubbleGroup
         .append("circle")
+        .attr('class', 'base-circle')
         .attr("cx", 0)
         .attr("cy", 0)
         .attr("r", bubbleRadius)
@@ -86,7 +106,28 @@ const BrandLogo = () => {
         .attr("r", bubbleRadius / 4)
         .attr("stroke-width", 4)
         .attr("stroke", accentColors[1])
-        .attr("fill", "transparent");
+        .attr("fill", "transparent")
+        .on('mouseenter', function(this: any) {
+          bubbleGroup.select('.base-circle')
+            .transition()
+            .duration(300)
+            .attr('fill', '#0f172a')
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke", hoverColor[1])
+            .attr('fill', hoverColor[1]);
+        }).on('mouseleave', function(this: any) {
+          bubbleGroup.select('.base-circle')
+            .transition()
+            .duration(300)
+            .attr('fill', '#353538')
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke", accentColors[1])
+            .attr("fill", 'transparent') ;
+        });
 
       bubbleGroup
         .append("circle")
@@ -95,7 +136,28 @@ const BrandLogo = () => {
         .attr("r", bubbleRadius / 8)
         .attr("stroke-width", 4)
         .attr("stroke", accentColors[0])
-        .attr("fill", "transparent");
+        .attr("fill", "transparent")
+        .on('mouseenter', function(this: any) {
+          bubbleGroup.select('.base-circle')
+            .transition()
+            .duration(300)
+            .attr('fill', '#0f172a')
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke", hoverColor[0])
+            .attr('fill', hoverColor[0]);
+        }).on('mouseleave', function(this: any) {
+          bubbleGroup.select('.base-circle')
+            .transition()
+            .duration(300)
+            .attr('fill', '#353538')
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke", accentColors[0])
+            .attr("fill", 'transparent') ;
+        });
 
       bubbleGroup
         .append("circle")
@@ -104,9 +166,30 @@ const BrandLogo = () => {
         .attr("r", bubbleRadius / 5)
         .attr("stroke-width", 4)
         .attr("stroke", accentColors[1])
-        .attr("fill", "transparent");
+        .attr("fill", "transparent")
+        .on('mouseenter', function(this: any) {
+          bubbleGroup.select('.base-circle')
+            .transition()
+            .duration(300)
+            .attr('fill', '#0f172a')
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke", hoverColor[1])
+            .attr('fill', hoverColor[1]);
+        }).on('mouseleave', function(this: any) {
+          bubbleGroup.select('.base-circle')
+            .transition()
+            .duration(300)
+            .attr('fill', '#353538')
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke", accentColors[1])
+            .attr("fill", 'transparent') ;
+        });;
     },
-    [height, width, accentColors]
+    [height, width, accentColors, hoverColor]
   );
 
   const renderBarChart = useCallback(
@@ -118,7 +201,7 @@ const BrandLogo = () => {
 
       const barChartData: any[] = [
         { label: 1, value: 15 },
-        { label: 2, value: 30, fill: accentColors[1] },
+        { label: 2, value: 30 },
         { label: 3, value: 20 },
         { label: 4, value: 40 },
       ];
@@ -161,6 +244,7 @@ const BrandLogo = () => {
         .y((d: any) => yScale(d.value + 10));
       barChartGroup
         .append("path")
+        .attr('class', 'line-trace')
         .attr("d", lineGen(barChartData))
         .attr("fill", "none")
         .attr("stroke", accentColors[1])
@@ -181,7 +265,22 @@ const BrandLogo = () => {
         .attr("y", (d: any) => yScale(d.value))
         .attr("height", (d: any) => yScale(0) - yScale(d.value) - 10)
         .attr("rx", 6)
-        .attr("ry", 6);
+        .attr("ry", 6)
+        .on('mouseenter', function(this: any) {
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("x", (d: any) => (xScale(d.label) ?? 0) - 4)
+            .attr("width", xScale.bandwidth() + 8)
+            .attr('fill', hoverColor[0]);
+        }).on('mouseleave', function(this: any) {
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("x", (d: any) => (xScale(d.label) ?? 0))
+            .attr("width", xScale.bandwidth())
+            .attr('fill', accentColors[0]);
+        });
       barRectGroup
         .append("circle")
         .attr("class", "market")
@@ -190,9 +289,34 @@ const BrandLogo = () => {
         .attr("fill", "#353538")
         .attr("r", 10)
         .attr("cx", (d: any) => (xScale(d.label) ?? 0) + xScale.bandwidth() / 2)
-        .attr("cy", (d: any) => yScale(d.value + 10));
+        .attr("cy", (d: any) => yScale(d.value + 10))
+        .on('mouseenter', function(this: any) {
+          barChartGroup
+            .select('.line-trace')
+            .transition()
+            .duration(300)
+            .attr("stroke", hoverColor[1])
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke-width", 8)
+            .attr('r', 14)
+            .attr('stroke', hoverColor[1]);
+        }).on('mouseleave', function(this: any) {
+          barChartGroup
+            .select('.line-trace')
+            .transition()
+            .duration(300)
+            .attr("stroke", accentColors[1])
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("stroke-width", 4)
+            .attr('r', 10)
+            .attr('stroke', accentColors[1]);
+        });
     },
-    [height, width, accentColors]
+    [height, width, accentColors, hoverColor]
   );
 
   const renderFunc = useCallback(() => {
