@@ -20,7 +20,7 @@ interface PageParams {
 const GraphComponentPage = async ({ params }: PageParams) => {  
   const { chartType, name } = params;
   const ChartComponent = dynamic(
-    () => import(`@/components/charts/${chartType}/${name}/ChartComponent`),
+    () => import(`/public/charts/${chartType}/${name}/ChartComponent`),
     { ssr: false }  // no ssr for chart components: render directly on client
   );
   return (
