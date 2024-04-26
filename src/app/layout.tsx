@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import { fetchAllCharts } from "@/utils/fetchChartsUtils";
 
 import React from 'react';
-import fs from 'fs/promises';
 
 const inter = Inter({ subsets: ["latin"] });
 

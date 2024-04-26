@@ -9,10 +9,10 @@ export interface ChartDataType { chartType: string, charts: string[] };
 export const fetchAllCharts = React.cache(
   async () => {
     console.log('-------------------------- fetchAllCharts fn run --------------------------');
-    const chartTypes = await fs.readdir('src/components/charts');
+    const chartTypes = await fs.readdir('public/charts');
     const allCharts: ChartDataType[] = [];
     for(const chartType of chartTypes) {
-      const dirCharts = await fs.readdir(`src/components/charts/${chartType}`);
+      const dirCharts = await fs.readdir(`public/charts/${chartType}`);
       allCharts.push({
         chartType,
         charts: dirCharts
