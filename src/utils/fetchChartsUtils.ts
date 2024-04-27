@@ -25,9 +25,9 @@ export const fetchChartLinks = React.cache(
 )
 
 export const fetchChartsFromDirectory = async(dir: string, tester: RegExp = fileTypeTester) => {
-  return (await fs.readdir(dir as PathLike)).filter((fileName) => fileTypeTester.test(fileName));
+  return (await fs.readdir(path.join(process.cwd(), dir))).filter((fileName) => tester.test(fileName));
 }
 
 export const fetchChartText = async(filePath: string) => {
-  return await fs.readFile(filePath).then(res => res.toString())
+  return await fs.readFile(path.join(process.cwd(), filePath)).then(res => res.toString())
 }

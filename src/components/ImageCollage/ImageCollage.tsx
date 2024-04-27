@@ -54,12 +54,11 @@ const ImageCollage = () => {
         <Link href={image.link} key={i}>
           <div className='mb-4 rounded-lg overflow-hidden relative group'>
             <Image src={image.img} alt={image.title}></Image>
-            <div className="desc absolute w-full h-full backdrop backdrop-blur-sm top-full group-hover:top-0 transition-all duration-200 ease-out bg-[#1c131330] opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <p className='text-center mx-2 my-auto text-2xl font-medium text-white font-sans'>
+            <div className="desc absolute top-0 w-full h-full backdrop backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out bg-[#50678551] flex items-center justify-center">
+              <p className='text-center translate-y-2 group-hover:translate-y-0 transition-transform duration-200 mx-2 my-auto text-2xl font-medium text-white font-sans'>
                 {image.title}
               </p>
             </div>
-            
           </div>
         </Link>
       ))}
