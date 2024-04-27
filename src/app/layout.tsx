@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import { fetchAllCharts } from "@/utils/fetchChartsUtils";
+import { fetchChartLinks } from "@/utils/fetchChartsUtils";
 
 import React from 'react';
 
@@ -18,7 +18,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const chartData = await fetchAllCharts();
+  const chartData = await fetchChartLinks();
   return (
     <html lang="en">
       <body className={inter.className}>

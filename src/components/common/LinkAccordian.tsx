@@ -31,10 +31,10 @@ const LinkAccordian = ({ linkData }: { linkData: ChartDataType }) => {
         <div className="content flex flex-col p-0 gap-0 bg-zinc-800">
           {linkData.charts.map((chart) => (
             <Link
-              href={`/${linkData.chartType}/${chart}`}
-              key={`/${linkData.chartType}/${chart}`}
+              href={`/charts/${linkData.chartType}/${chart}`}
+              key={`/charts/${linkData.chartType}/${chart}`}
               className="h-12 flex items-center gap-4 hover:bg-zinc-500 px-12"
-            > <IconDot16 width={24} className={pathName === `/${linkData.chartType}/${chart}` ? 'stroke-rose-600 fill-rose-600' : ''} height={24} />
+            > <IconDot16 width={24} className={pathName === `/charts/${linkData.chartType}/${chart}` ? 'stroke-rose-600 fill-rose-600' : ''} height={24} />
               {textFormattor(chart)}
             </Link>
           ))}
