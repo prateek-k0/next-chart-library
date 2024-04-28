@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Chart Library
 
-## Getting Started
+**A collection of D3.js chart components to be used in Next.js framework for quick prototyping.**
 
-First, run the development server:
+## Built with:
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![D3.js](https://img.shields.io/badge/d3%20js-F9A03C?style=for-the-badge&logo=d3.js&logoColor=white) 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Screenshots: 
+<img src="./public/screenshots/home-page.png" alt="home-page" height="640"/> <img src="./public/screenshots/bar-chart.png" alt="bar-chart" width="480"/> <img src="./public/screenshots/bubbles-chart.png" alt="bubbles-chart" width="480" /> <img src="./public/screenshots/pie-chart.png" alt="pie-chart" width="480" /> <img src="./public/screenshots/choropleth-chart.png" alt="choropleth-chart" width="480" /> <img src="./public/screenshots/choropleth-code.png" alt="choropleth-code" width="480" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Acknowledgements
+ - Quite many charts were used from the awesome [D3 Chart Gallery](https://d3-graph-gallery.com/about.html)
+ - For easy readme formatting: [readme.so](https://readme.so/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Authors
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [@prateek-k0](https://github.com/prateek-k0)
