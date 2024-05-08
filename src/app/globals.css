@@ -13,6 +13,24 @@ body {
   background: rgb(var(--background-start-rgb));
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+  background-color: rgb(var(--background-start-rgb));
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  outline: none;
+}
+
+.code-block ::-webkit-scrollbar-track {
+  background-color: #282a36;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
