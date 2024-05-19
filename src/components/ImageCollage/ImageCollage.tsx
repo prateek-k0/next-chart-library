@@ -23,9 +23,11 @@ import sunburst from '@/../public/chart-thumbnails/sunburst.png'
 import treemap from '@/../public/chart-thumbnails/treemap.png'
 import zoomableBubble from '@/../public/chart-thumbnails/zoomable-bubble.png'
 import forceBubbles from '@/../public/chart-thumbnails/force-simulated-bubbles.png'
+import minimapTree from '@/../public/chart-thumbnails/tree-minimap.png'
 
 const imageList: { img: StaticImageData, link: string, title: string }[] = [
   { img: arcMouseevents, link: '/charts/arc-diagrams/interactive-arc-diagram', title: 'Interactive Arc Diagram' },
+  { img: minimapTree, link: '/charts/hierarchical/tree', title: 'Tree with Minimap' },
   { img: bubbleScatter, link: '/charts/bubble-charts/scatter-chart', title: 'Bubble scatter plot' },
   { img: chordColored, link: '/charts/pie-charts/chord-chart', title: 'Chord chart' },
   { img: choroplethMap, link: '/charts/maps/choropleth', title: 'Choropleth map' },
