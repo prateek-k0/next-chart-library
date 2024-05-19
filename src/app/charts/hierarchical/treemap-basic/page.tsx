@@ -8,8 +8,8 @@ const ChartComponent = async () => {
   ).then((res) => res.json());
   return (
     <ChartWrapper
-      chartTitle="Heatmap - basic"
-      directoryPath="/src/app/charts/treemaps/basic"
+      chartTitle="Basic Treemap"
+      directoryPath="/src/app/charts/hierarchical/treemap-basic"
     >
       <ChartUtil data={data} />
     </ChartWrapper>

@@ -42,7 +42,7 @@ const imageList: { img: StaticImageData, link: string, title: string }[] = [
   { img: PiePercDist, link: '/charts/pie-charts/percentage-distribution', title: 'Pie chart - Percentage distribution' },
   { img: scatter, link: '/charts/scatter-plots/basic', title: 'Scatter plot' },
   { img: sunburst, link: '/charts/pie-charts/sunburst-chart', title: 'Sunburst' },
-  { img: treemap, link: '/charts/treemaps/basic', title: 'Treemap' },
+  { img: treemap, link: '/charts/hierarchical/treemap-basic', title: 'Treemap' },
   { img: zoomableBubble, link: '/charts/bubble-charts/circular-packing-zoomable', title: 'Zoomable bubble chart' },
   { img: arcDiagram, link: '/charts/arc-diagrams/basic-arc-diagram', title: 'Basic Arc Diagram' },
 ]

@@ -17,9 +17,9 @@ const LinkAccordian = ({ linkData }: { linkData: ChartDataType }) => {
   const pathName = usePathname();
   const [accState, setAccState] = useState(false);
   return (
-    <div className="w-full flex flex-col gap-0 font-sans text-md font-light">
+    <div className="w-full flex flex-col gap-0 font-sans text-md font-light border-t border-zinc-500 first:border-0">
       <div
-        className="header h-16 bg-zinc-600 border border-zinc-500 flex items-center px-12 justify-between"
+        className="header h-16 bg-zinc-800 flex items-center px-12 justify-between"
         onClick={() => setAccState((s) => !s)}
       >
         <p className="font-normal">
@@ -28,7 +28,7 @@ const LinkAccordian = ({ linkData }: { linkData: ChartDataType }) => {
         {accState ? <IconBxsDownArrow /> : <IconBxRightArrow />}
       </div>
       {accState && (
-        <div className="content flex flex-col p-0 gap-0 bg-zinc-800">
+        <div className="content flex flex-col p-0 gap-0 bg-zinc-700">
           {linkData.charts.map((chart) => (
             <Link
               href={`/charts/${linkData.chartType}/${chart}`}
