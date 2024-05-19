@@ -1,0 +1,3307 @@
+{
+  "stations": {
+    "Alex": {
+      "name": "Alex",
+      "label": "Alex",
+      "place_id": "ChIJaVrou4hw2EcROetQMMOP12M",
+      "position": {
+        "lat": 52.20386,
+        "lon": 0.139356
+      },
+      "x": 75,
+      "y": 2,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Alma": {
+      "name": "Alma",
+      "label": "Alma",
+      "place_id": "ChIJF5v8q55w2EcRWbfRNUQNPmE",
+      "position": {
+        "lat": 52.195982,
+        "lon": 0.125493
+      },
+      "x": 20,
+      "y": -14,
+      "labelPos": "SE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Anchor": {
+      "name": "Anchor",
+      "label": "Anchor",
+      "place_id": "hIJocwdyrxw2EcRnogp-KBkY_o",
+      "position": {
+        "lat": 52.201999,
+        "lon": 0.115758
+      },
+      "x": 9,
+      "y": -2,
+      "labelPos": "E",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "S",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Town",
+          "color": "#FFD600",
+          "labelPos": "E",
+          "dir": "S",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "AncientShepherds": {
+      "name": "AncientShepherds",
+      "label": "Ancient Shepherds",
+      "place_id": "ChIJI5agpzlw2EcR55ZT5vZy_ok",
+      "position": {
+        "lat": 52.220375,
+        "lon": 0.172721
+      },
+      "x": 83,
+      "y": 27,
+      "labelPos": "SE",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Architect": {
+      "name": "Architect",
+      "label": "Architect",
+      "place_id": "ChIJX3Dbo7hw2EcR4iVxgX74BlU",
+      "position": {
+        "lat": 52.212078,
+        "lon": 0.113155
+      },
+      "x": -6,
+      "y": 18,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "SW",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "BathHouse": {
+      "name": "BathHouse",
+      "label": "Bath House",
+      "position": {
+        "lat": 52.204073,
+        "lon": 0.118459
+      },
+      "x": 16,
+      "y": 2,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "BlueBallInn": {
+      "name": "BlueBallInn",
+      "label": "Blue Ball Inn",
+      "position": {
+        "lat": 52.183303,
+        "lon": 0.09408
+      },
+      "x": -27,
+      "y": -16,
+      "labelPos": "W",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "W",
+          "dir": "N",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "BlueMoon": {
+      "name": "BlueMoon",
+      "label": "Blue\nMoon",
+      "position": {
+        "lat": 52.204781,
+        "lon": 0.136648
+      },
+      "x": 67,
+      "y": 2,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Boathouse": {
+      "name": "Boathouse",
+      "label": "Boathouse",
+      "position": {
+        "lat": 52.213719,
+        "lon": 0.123523
+      },
+      "x": 11,
+      "y": 23,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Riverbank",
+          "color": "#015f8f",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "BrewHouse": {
+      "name": "BrewHouse",
+      "label": "Brew\nHouse",
+      "position": {
+        "lat": 52.207412,
+        "lon": 0.122225
+      },
+      "x": 27,
+      "y": 10,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "W",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Town",
+          "color": "#FFD600",
+          "labelPos": "SW",
+          "dir": "W",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": 0.5,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "BurleighArms": {
+      "name": "BurleighArms",
+      "label": "Burleigh Arms",
+      "position": {
+        "lat": 52.208184,
+        "lon": 0.132854
+      },
+      "x": 51.5,
+      "y": 10,
+      "labelPos": "NW",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "NW",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "CambridgeBlue": {
+      "name": "CambridgeBlue",
+      "label": "Cambridge Blue",
+      "position": {
+        "lat": 52.202328,
+        "lon": 0.139173
+      },
+      "x": 84,
+      "y": -3,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "RifleArms": {
+      "name": "RifleArms",
+      "label": "Rifle Arms",
+      "position": {
+        "lat": 52.222048,
+        "lon": 0.114374
+      },
+      "x": 10,
+      "y": 34,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "W",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "N",
+          "dir": "W",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "CarpentersArms": {
+      "name": "CarpentersArms",
+      "label": "Carpenter's Arms",
+      "position": {
+        "lat": 52.21576,
+        "lon": 0.114374
+      },
+      "x": -3,
+      "y": 31,
+      "labelPos": "NW",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "SW",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "NW",
+          "dir": "SW",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "CastleInn": {
+      "name": "CastleInn",
+      "label": "Castle\nInn",
+      "place_id": "ChIJoccoXsdw2EcROG63agLdFi4",
+      "position": {
+        "lat": 52.211945,
+        "lon": 0.113552
+      },
+      "x": -4,
+      "y": 16,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "ChampionOfTheThames": {
+      "name": "ChampionOfTheThames",
+      "label": "Champion\nof the\nThames",
+      "position": {
+        "lat": 52.207328,
+        "lon": 0.124451
+      },
+      "x": 32,
+      "y": 10,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "W",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Town",
+          "color": "#FFD600",
+          "labelPos": "S",
+          "dir": "W",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "ClarendonArms": {
+      "name": "ClarendonArms",
+      "label": "Clarendon\nArms",
+      "position": {
+        "lat": 52.20465,
+        "lon": 0.127679
+      },
+      "x": 37,
+      "y": 2,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "SW",
+          "dir": "E",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "CornerHouse": {
+      "name": "CornerHouse",
+      "label": "Corner House",
+      "position": {
+        "lat": 52.209485,
+        "lon": 0.143369
+      },
+      "x": 59,
+      "y": 13,
+      "labelPos": "S",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Cricketers": {
+      "name": "Cricketers",
+      "label": "Cricketers",
+      "position": {
+        "lat": 52.204954,
+        "lon": 0.129559
+      },
+      "x": 50,
+      "y": 2,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Dobblers": {
+      "name": "Dobblers",
+      "label": "Dobblers",
+      "position": {
+        "lat": 52.205422,
+        "lon": 0.140016
+      },
+      "x": 71,
+      "y": 2,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "DukeOfCambridge": {
+      "name": "DukeOfCambridge",
+      "label": "Duke\nof Cambridge",
+      "position": {
+        "lat": 52.204871,
+        "lon": 0.133633
+      },
+      "x": 62,
+      "y": 2,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Eagle": {
+      "name": "Eagle",
+      "label": "Eagle",
+      "position": {
+        "lat": 52.203974,
+        "lon": 0.118044
+      },
+      "x": 9,
+      "y": 2,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "NE",
+          "dir": "E",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "EarlOfDerby": {
+      "name": "EarlOfDerby",
+      "label": "Earl of Derby",
+      "position": {
+        "lat": 52.192092,
+        "lon": 0.134079
+      },
+      "x": 45,
+      "y": -17,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "SW",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "ElmTree": {
+      "name": "ElmTree",
+      "label": "Elm Tree",
+      "position": {
+        "lat": 52.205124,
+        "lon": 0.129503
+      },
+      "x": 45,
+      "y": 2,
+      "labelPos": "NW",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "NW",
+          "dir": "E",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "FlyingPig": {
+      "name": "FlyingPig",
+      "label": "Flying Pig",
+      "position": {
+        "lat": 52.194474,
+        "lon": 0.131747
+      },
+      "x": 41,
+      "y": -13,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "FreePress": {
+      "name": "FreePress",
+      "label": "Free\nPress",
+      "position": {
+        "lat": 52.20474,
+        "lon": 0.130385
+      },
+      "x": 54,
+      "y": 2,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Geldart": {
+      "name": "Geldart",
+      "label": "Geldart",
+      "position": {
+        "lat": 52.203696,
+        "lon": 0.142231
+      },
+      "x": 82,
+      "y": -1,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "GoldenHind": {
+      "name": "GoldenHind",
+      "label": "Golden Hind",
+      "position": {
+        "lat": 52.227922,
+        "lon": 0.145524
+      },
+      "x": 40,
+      "y": 30,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "GrainStore": {
+      "name": "GrainStore",
+      "label": "Grain Store",
+      "position": {
+        "lat": 52.200689,
+        "lon": 0.126622
+      },
+      "x": 35,
+      "y": -7,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Granta": {
+      "name": "Granta",
+      "label": "Granta",
+      "position": {
+        "lat": 52.1997,
+        "lon": 0.11373
+      },
+      "x": 3,
+      "y": -4,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Riverbank",
+          "color": "#015f8f",
+          "labelPos": "SW",
+          "dir": "N",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Grapes": {
+      "name": "Grapes",
+      "label": "Grapes",
+      "position": {
+        "lat": 52.214963,
+        "lon": 0.110773
+      },
+      "x": -5,
+      "y": 29,
+      "labelPos": "NW",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "SW",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "NW",
+          "dir": "SW",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "GreenDragon": {
+      "name": "GreenDragon",
+      "label": "Green Dragon",
+      "position": {
+        "lat": 52.217958,
+        "lon": 0.145433
+      },
+      "x": 44,
+      "y": 23,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Riverbank",
+          "color": "#015f8f",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "GreenManGrantchester": {
+      "name": "GreenManGrantchester",
+      "label": "Green Man",
+      "position": {
+        "lat": 52.18004,
+        "lon": 0.095174
+      },
+      "x": -27,
+      "y": -28,
+      "labelPos": "W",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "W",
+          "dir": "N",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "GreenManTrumpington": {
+      "name": "GreenManTrumpington",
+      "label": "Green Man",
+      "position": {
+        "lat": 52.176564,
+        "lon": 0.113054
+      },
+      "x": 1,
+      "y": -33,
+      "labelPos": "SE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Haymakers": {
+      "name": "Haymakers",
+      "label": "Haymakers",
+      "position": {
+        "lat": 52.217339,
+        "lon": 0.139439
+      },
+      "x": 38,
+      "y": 23,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Riverbank",
+          "color": "#015f8f",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Hopbine": {
+      "name": "Hopbine",
+      "label": "Hopbine",
+      "position": {
+        "lat": 52.207365,
+        "lon": 0.12938
+      },
+      "closed": false,
+      "x": 49.5,
+      "y": 8,
+      "labelPos": "NW",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "NW",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "HudsonsAleHouse": {
+      "name": "HudsonsAleHouse",
+      "label": "Hudson's Ale House",
+      "position": {
+        "lat": 52.175125,
+        "lon": 0.112693
+      },
+      "x": -3,
+      "y": -37,
+      "labelPos": "SE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "KingsHead": {
+      "name": "KingsHead",
+      "label": "King's Head",
+      "position": {
+        "lat": 52.2214166,
+        "lon": 0.169868
+      },
+      "x": 85,
+      "y": 29,
+      "labelPos": "SE",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "KingstonArms": {
+      "name": "KingstonArms",
+      "label": "Kingston Arms",
+      "position": {
+        "lat": 52.200351,
+        "lon": 0.139764
+      },
+      "x": 88,
+      "y": -7,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "KingStreetRun": {
+      "name": "KingStreetRun",
+      "label": "King Street\nRun",
+      "position": {
+        "lat": 52.20724,
+        "lon": 0.125199
+      },
+      "x": 34,
+      "y": 10,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "W",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Town",
+          "color": "#FFD600",
+          "labelPos": "N",
+          "dir": "W",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "LordByronInn": {
+      "name": "LordByronInn",
+      "label": "Lord Byron Inn",
+      "position": {
+        "lat": 52.174461,
+        "lon": 0.110456
+      },
+      "x": -8,
+      "y": -42,
+      "labelPos": "SE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Maypole": {
+      "name": "Maypole",
+      "label": "Maypole",
+      "position": {
+        "lat": 52.209671,
+        "lon": 0.119232
+      },
+      "x": 27,
+      "y": 13,
+      "labelPos": "W",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "W",
+          "dir": "N",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Med": {
+      "name": "Med",
+      "label": "Med",
+      "position": {
+        "lat": 52.18913,
+        "lon": 0.153427
+      },
+      "closed": false,
+      "x": 51,
+      "y": -23,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "SW",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Mill": {
+      "name": "Mill",
+      "label": "Mill",
+      "position": {
+        "lat": 52.201552,
+        "lon": 0.116128
+      },
+      "x": 14,
+      "y": -4,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Town",
+          "color": "#FFD600",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        },
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -1,
+          "shiftNormal": 0
+        },
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "MiltonArms": {
+      "name": "MiltonArms",
+      "label": "Milton Arms",
+      "position": {
+        "lat": 52.22268,
+        "lon": 0.136693
+      },
+      "x": 34,
+      "y": 30,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Mitre": {
+      "name": "Mitre",
+      "label": "Mitre",
+      "position": {
+        "lat": 52.208852,
+        "lon": 0.118185
+      },
+      "x": 15,
+      "y": 10,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Town",
+          "color": "#FFD600",
+          "labelPos": "N",
+          "dir": "W",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        },
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "OldSpring": {
+      "name": "OldSpring",
+      "label": "Old Spring",
+      "position": {
+        "lat": 52.214393,
+        "lon": 0.127719
+      },
+      "x": 27,
+      "y": 23,
+      "labelPos": "SE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "SE",
+          "dir": "N",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "OldTicketOffice": {
+      "name": "OldTicketOffice",
+      "label": "Old Ticket Office",
+      "position": {
+        "lat": 52.194681,
+        "lon": 0.1366827
+      },
+      "x": 43,
+      "y": -15,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "SW",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "PantonArms": {
+      "name": "PantonArms",
+      "label": "Panton Arms",
+      "position": {
+        "lat": 52.196491,
+        "lon": 0.124987
+      },
+      "x": 22,
+      "y": -12,
+      "labelPos": "SE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Petersfield": {
+      "name": "Petersfield",
+      "label": "Petersfield",
+      "position": {
+        "lat": 52.201332,
+        "lon": 0.140671
+      },
+      "x": 86,
+      "y": -5,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Pickerel": {
+      "name": "Pickerel",
+      "label": "Pickerel",
+      "position": {
+        "lat": 52.209955,
+        "lon": 0.116209
+      },
+      "x": 3,
+      "y": 10,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "SW",
+          "dir": "E",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "PintShop": {
+      "name": "PintShop",
+      "label": "Pint Shop",
+      "position": {
+        "lat": 52.204194,
+        "lon": 0.119142
+      },
+      "x": 21,
+      "y": 2,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Plough": {
+      "name": "Plough",
+      "label": "Plough",
+      "position": {
+        "lat": 52.224075,
+        "lon": 0.16823
+      },
+      "x": 87,
+      "y": 31,
+      "labelPos": "SE",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "NE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "SE",
+          "dir": "NE",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "PortlandArms": {
+      "name": "PortlandArms",
+      "label": "Portland Arms",
+      "position": {
+        "lat": 52.214426,
+        "lon": 0.124525
+      },
+      "x": 14,
+      "y": 23,
+      "labelPos": "N",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Riverbank",
+          "color": "#015f8f",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "PrinceRegent": {
+      "name": "PrinceRegent",
+      "label": "Prince Regent",
+      "position": {
+        "lat": 52.199934,
+        "lon": 0.126909
+      },
+      "x": 37,
+      "y": -9,
+      "labelPos": "NE",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "NE",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Punter": {
+      "name": "Punter",
+      "label": "Punter",
+      "place_id": "ChIJIwqxlbhw2EcRQYT52kWYXhQ",
+      "position": {
+        "lat": 52.210552,
+        "lon": 0.113281
+      },
+      "x": -1,
+      "y": 13,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "SW",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "QueenEdith": {
+      "name": "QueenEdith",
+      "label": "Queen Edith",
+      "position": {
+        "lat": 52.180264,
+        "lon": 0.152927
+      },
+      "x": 58,
+      "y": -26,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "RedBull": {
+      "name": "RedBull",
+      "label": "Red Bull",
+      "position": {
+        "lat": 52.196487,
+        "lon": 0.108657
+      },
+      "x": -5,
+      "y": -4,
+      "labelPos": "N",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "RedLion": {
+      "name": "RedLion",
+      "label": "Red Lion",
+      "position": {
+        "lat": 52.180343,
+        "lon": 0.095603
+      },
+      "x": -27,
+      "y": -24,
+      "labelPos": "W",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "W",
+          "dir": "N",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Regal": {
+      "name": "Regal",
+      "label": "Regal",
+      "position": {
+        "lat": 52.202947,
+        "lon": 0.123806
+      },
+      "x": 27,
+      "y": -4,
+      "labelPos": "NW",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "NW",
+          "dir": "N",
+          "marker": "interchange",
+          "shiftX": 0,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Rock": {
+      "name": "Rock",
+      "label": "Rock",
+      "position": {
+        "lat": 52.187503,
+        "lon": 0.146716
+      },
+      "x": 47,
+      "y": -19,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": -2,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "HillsRoad",
+          "color": "#89014C",
+          "labelPos": "SW",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": -2,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "RupertBrook": {
+      "name": "RupertBrook",
+      "label": "Rupert Brooke",
+      "position": {
+        "lat": 52.181132,
+        "lon": 0.093629
+      },
+      "x": -27,
+      "y": -20,
+      "labelPos": "W",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "W",
+          "dir": "N",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Blip": {
+      "name": "Blip",
+      "label": "Blip",
+      "position": {
+        "lat": 52.231224,
+        "lon": 0.128837
+      },
+      "x": 43,
+      "y": 42,
+      "labelPos": "E",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Northern",
+          "color": "#000000",
+          "labelPos": "E",
+          "dir": "N",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "IsaacNewton": {
+      "name": "IsaacNewton",
+      "label": "Isaac Newton",
+      "position": {
+        "lat": 52.213338,
+        "lon": 0.112072
+      },
+      "x": -8,
+      "y": 20,
+      "labelPos": "SW",
+      "labelShiftX": 0,
+      "labelShiftY": 1,
+      "labelShiftNormal": 0,
+      "dir": "SE",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Castle",
+          "color": "#ff8329",
+          "labelPos": "SW",
+          "dir": "SE",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 1,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "StRadegund": {
+      "name": "StRadegund",
+      "label": "St Radegund",
+      "position": {
+        "lat": 52.207616,
+        "lon": 0.126733
+      },
+      "x": 37,
+      "y": 6,
+      "labelPos": "E",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "N",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Town",
+          "color": "#FFD600",
+          "labelPos": "E",
+          "dir": "N",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "TramDepot": {
+      "name": "TramDepot",
+      "label": "Tram\nDepot",
+      "position": {
+        "lat": 52.204638,
+        "lon": 0.132827
+      },
+      "x": 58,
+      "y": 2,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Backstreet",
+          "color": "#f7026d",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Waterman": {
+      "name": "Waterman",
+      "label": "Waterman",
+      "position": {
+        "lat": 52.214166,
+        "lon": 0.125526
+      },
+      "x": 20,
+      "y": 23,
+      "labelPos": "S",
+      "labelShiftX": 0,
+      "labelShiftY": 0,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Riverbank",
+          "color": "#015f8f",
+          "labelPos": "S",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 0,
+          "shiftY": 0,
+          "shiftNormal": 0
+        }
+      ]
+    },
+    "Wrestlers": {
+      "name": "Wrestlers",
+      "label": "Wrestlers",
+      "position": {
+        "lat": 52.210964,
+        "lon": 0.146358
+      },
+      "x": 61,
+      "y": 13,
+      "labelPos": "N",
+      "labelShiftX": 1,
+      "labelShiftY": -1,
+      "labelShiftNormal": 0,
+      "dir": "E",
+      "closed": false,
+      "visited": false,
+      "marker": [
+        {
+          "line": "Grantchester",
+          "color": "#02992C",
+          "labelPos": "N",
+          "dir": "E",
+          "marker": "station",
+          "shiftX": 1,
+          "shiftY": -1,
+          "shiftNormal": 0
+        }
+      ]
+    }
+  },
+  "lines": [
+    {
+      "name": "Town",
+      "label": "Town",
+      "color": "#FFD600",
+      "shiftCoords": [
+        0,
+        0
+      ],
+      "nodes": [
+        {
+          "coords": [
+            14,
+            -4
+          ],
+          "name": "Mill",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            27,
+            -4
+          ],
+          "marker": "interchange",
+          "name": "Regal",
+          "labelPos": "NW",
+          "shiftCoords": [
+            0,
+            0
+          ],
+          "hide": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            36,
+            -4
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            37,
+            -3
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            37,
+            2
+          ],
+          "marker": "interchange",
+          "name": "ClarendonArms",
+          "labelPos": "E",
+          "hide": true,
+          "dir": "N"
+        },
+        {
+          "coords": [
+            37,
+            6
+          ],
+          "name": "StRadegund",
+          "labelPos": "E",
+          "dir": "N"
+        },
+        {
+          "coords": [
+            37,
+            9
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            36,
+            10
+          ],
+          "dir": "W"
+        },
+        {
+          "coords": [
+            34,
+            10
+          ],
+          "name": "KingStreetRun",
+          "labelPos": "N",
+          "dir": "W"
+        },
+        {
+          "coords": [
+            32,
+            10
+          ],
+          "name": "ChampionOfTheThames",
+          "labelPos": "S",
+          "dir": "W"
+        },
+        {
+          "coords": [
+            27,
+            10
+          ],
+          "marker": "interchange",
+          "name": "BrewHouse",
+          "labelPos": "SW",
+          "shiftCoords": [
+            0,
+            0.5
+          ],
+          "labelShiftCoords": [
+            0,
+            0
+          ],
+          "canonical": true,
+          "dir": "W"
+        },
+        {
+          "coords": [
+            15,
+            10
+          ],
+          "name": "Mitre",
+          "labelPos": "N",
+          "dir": "W"
+        },
+        {
+          "coords": [
+            10,
+            10
+          ],
+          "dir": "W"
+        },
+        {
+          "coords": [
+            9,
+            9
+          ],
+          "dir": "S"
+        },
+        {
+          "coords": [
+            9,
+            2
+          ],
+          "marker": "interchange",
+          "name": "Eagle",
+          "labelPos": "NW",
+          "hide": true,
+          "dir": "S"
+        },
+        {
+          "coords": [
+            9,
+            -2
+          ],
+          "name": "Anchor",
+          "labelPos": "E",
+          "dir": "S"
+        },
+        {
+          "coords": [
+            9,
+            -3
+          ],
+          "dir": "S"
+        },
+        {
+          "coords": [
+            10,
+            -4
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            14,
+            -4
+          ],
+          "dir": "E"
+        }
+      ]
+    },
+    {
+      "name": "Castle",
+      "label": "Castle",
+      "color": "#ff8329",
+      "shiftCoords": [
+        0,
+        1
+      ],
+      "nodes": [
+        {
+          "coords": [
+            10,
+            34
+          ],
+          "name": "RifleArms",
+          "labelPos": "N",
+          "dir": "W"
+        },
+        {
+          "coords": [
+            1,
+            34
+          ],
+          "dir": "W"
+        },
+        {
+          "coords": [
+            -1,
+            33
+          ],
+          "dir": "SW"
+        },
+        {
+          "coords": [
+            -3,
+            31
+          ],
+          "name": "CarpentersArms",
+          "labelPos": "NW",
+          "dir": "SW"
+        },
+        {
+          "coords": [
+            -5,
+            29
+          ],
+          "name": "Grapes",
+          "labelPos": "NW",
+          "dir": "SW"
+        },
+        {
+          "coords": [
+            -8,
+            26
+          ],
+          "dir": "SW"
+        },
+        {
+          "coords": [
+            -9,
+            24
+          ],
+          "dir": "S"
+        },
+        {
+          "coords": [
+            -9,
+            23
+          ],
+          "dir": "S"
+        },
+        {
+          "coords": [
+            -9,
+            22
+          ],
+          "dir": "S"
+        },
+        {
+          "coords": [
+            -8,
+            20
+          ],
+          "name": "IsaacNewton",
+          "labelPos": "SW",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            -6,
+            18
+          ],
+          "name": "Architect",
+          "labelPos": "SW",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            -4,
+            16
+          ],
+          "name": "CastleInn",
+          "labelPos": "NE",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            -1,
+            13
+          ],
+          "name": "Punter",
+          "labelPos": "SW",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            1,
+            11
+          ],
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            3,
+            10
+          ],
+          "marker": "interchange",
+          "name": "Pickerel",
+          "labelPos": "SW",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            15,
+            10
+          ],
+          "name": "Mitre",
+          "labelPos": "N",
+          "canonical": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            27,
+            10
+          ],
+          "marker": "interchange",
+          "name": "BrewHouse",
+          "labelPos": "W",
+          "hide": true,
+          "dir": "E"
+        }
+      ]
+    },
+    {
+      "name": "Riverbank",
+      "label": "Riverbank",
+      "color": "#015f8f",
+      "shiftCoords": [
+        0,
+        0
+      ],
+      "nodes": [
+        {
+          "coords": [
+            3,
+            -4
+          ],
+          "marker": "interchange",
+          "name": "Granta",
+          "labelPos": "SW",
+          "shiftCoords": [
+            0,
+            -1
+          ],
+          "canonical": true,
+          "dir": "N"
+        },
+        {
+          "coords": [
+            3,
+            10
+          ],
+          "marker": "interchange",
+          "name": "Pickerel",
+          "labelPos": "SW",
+          "hide": true,
+          "dir": "N"
+        },
+        {
+          "coords": [
+            3,
+            18
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            4,
+            20
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            6,
+            22
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            8,
+            23
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            11,
+            23
+          ],
+          "name": "Boathouse",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            14,
+            23
+          ],
+          "name": "PortlandArms",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            20,
+            23
+          ],
+          "name": "Waterman",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            27,
+            23
+          ],
+          "marker": "interchange",
+          "name": "OldSpring",
+          "labelPos": "S",
+          "hide": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            38,
+            23
+          ],
+          "name": "Haymakers",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            44,
+            23
+          ],
+          "name": "GreenDragon",
+          "labelPos": "S",
+          "dir": "E"
+        }
+      ]
+    },
+    {
+      "name": "Backstreet",
+      "label": "Backstreet",
+      "color": "#f7026d",
+      "shiftCoords": [
+        0,
+        0
+      ],
+      "nodes": [
+        {
+          "coords": [
+            9,
+            2
+          ],
+          "marker": "interchange",
+          "name": "Eagle",
+          "labelPos": "NE",
+          "canonical": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            16,
+            2
+          ],
+          "name": "BathHouse",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            21,
+            2
+          ],
+          "name": "PintShop",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            37,
+            2
+          ],
+          "marker": "interchange",
+          "name": "ClarendonArms",
+          "labelPos": "SW",
+          "canonical": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            45,
+            2
+          ],
+          "marker": "interchange",
+          "name": "ElmTree",
+          "labelPos": "NW",
+          "canonical": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            50,
+            2
+          ],
+          "name": "Cricketers",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            54,
+            2
+          ],
+          "name": "FreePress",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            58,
+            2
+          ],
+          "name": "TramDepot",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            62,
+            2
+          ],
+          "name": "DukeOfCambridge",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            67,
+            2
+          ],
+          "name": "BlueMoon",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            71,
+            2
+          ],
+          "name": "Dobblers",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            75,
+            2
+          ],
+          "name": "Alex",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            78,
+            2
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            80,
+            1
+          ],
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            82,
+            -1
+          ],
+          "name": "Geldart",
+          "labelPos": "NE",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            84,
+            -3
+          ],
+          "name": "CambridgeBlue",
+          "labelPos": "NE",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            86,
+            -5
+          ],
+          "name": "Petersfield",
+          "labelPos": "NE",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            88,
+            -7
+          ],
+          "name": "KingstonArms",
+          "labelPos": "NE",
+          "dir": "SE"
+        }
+      ]
+    },
+    {
+      "name": "Grantchester",
+      "label": "Grantchester",
+      "color": "#02992C",
+      "shiftCoords": [
+        1,
+        -1
+      ],
+      "nodes": [
+        {
+          "coords": [
+            -27,
+            -28
+          ],
+          "name": "GreenManGrantchester",
+          "labelPos": "W",
+          "dir": "N"
+        },
+        {
+          "coords": [
+            -27,
+            -24
+          ],
+          "name": "RedLion",
+          "labelPos": "W",
+          "dir": "N"
+        },
+        {
+          "coords": [
+            -27,
+            -20
+          ],
+          "name": "RupertBrook",
+          "labelPos": "W",
+          "dir": "N"
+        },
+        {
+          "coords": [
+            -27,
+            -16
+          ],
+          "name": "BlueBallInn",
+          "labelPos": "W",
+          "dir": "N"
+        },
+        {
+          "coords": [
+            -27,
+            -11
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            -26,
+            -9
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            -24,
+            -7
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            -22,
+            -5
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            -20,
+            -4
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            -5,
+            -4
+          ],
+          "name": "RedBull",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            3,
+            -4
+          ],
+          "marker": "interchange",
+          "name": "Granta",
+          "labelPos": "S",
+          "hide": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            14,
+            -4
+          ],
+          "name": "Mill",
+          "labelPos": "S",
+          "shiftCoords": [
+            0,
+            -1
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            27,
+            -4
+          ],
+          "marker": "interchange",
+          "name": "Regal",
+          "labelPos": "NW",
+          "shiftCoords": [
+            0,
+            -1
+          ],
+          "hide": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            36.5,
+            -4
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            38.5,
+            -3
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            49.5,
+            8
+          ],
+          "name": "Hopbine",
+          "labelPos": "NW",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            51.5,
+            10
+          ],
+          "name": "BurleighArms",
+          "labelPos": "NW",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            53.5,
+            12
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            55.5,
+            13
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            59,
+            13
+          ],
+          "name": "CornerHouse",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            61,
+            13
+          ],
+          "name": "Wrestlers",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            66,
+            13
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            68,
+            13
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            70,
+            14
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            83,
+            27
+          ],
+          "name": "AncientShepherds",
+          "labelPos": "SE",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            85,
+            29
+          ],
+          "name": "KingsHead",
+          "labelPos": "SE",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            87,
+            31
+          ],
+          "name": "Plough",
+          "labelPos": "SE",
+          "dir": "NE"
+        }
+      ]
+    },
+    {
+      "name": "HillsRoad",
+      "label": "Hills Road",
+      "color": "#89014C",
+      "shiftCoords": [
+        0,
+        -2
+      ],
+      "nodes": [
+        {
+          "coords": [
+            14,
+            -4
+          ],
+          "name": "Mill",
+          "labelPos": "S",
+          "shiftCoords": [
+            0,
+            -2
+          ],
+          "canonical": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            27,
+            -4
+          ],
+          "marker": "interchange",
+          "name": "Regal",
+          "labelPos": "NE",
+          "shiftCoords": [
+            0,
+            -2
+          ],
+          "hide": true,
+          "dir": "E"
+        },
+        {
+          "coords": [
+            31,
+            -4
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            33,
+            -5
+          ],
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            35,
+            -7
+          ],
+          "name": "GrainStore",
+          "labelPos": "NE",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            37,
+            -9
+          ],
+          "name": "PrinceRegent",
+          "labelPos": "NE",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            41,
+            -13
+          ],
+          "name": "FlyingPig",
+          "labelPos": "NE",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            43,
+            -15
+          ],
+          "name": "OldTicketOffice",
+          "labelPos": "SW",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            45,
+            -17
+          ],
+          "name": "EarlOfDerby",
+          "labelPos": "SW",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            47,
+            -19
+          ],
+          "name": "Rock",
+          "labelPos": "SW",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            51,
+            -23
+          ],
+          "name": "Med",
+          "labelPos": "SW",
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            53,
+            -25
+          ],
+          "dir": "SE"
+        },
+        {
+          "coords": [
+            55,
+            -26
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            58,
+            -26
+          ],
+          "name": "QueenEdith",
+          "labelPos": "S",
+          "dir": "E"
+        }
+      ]
+    },
+    {
+      "name": "Northern",
+      "label": "Northern",
+      "color": "#52525b",
+      "shiftCoords": [
+        0,
+        0
+      ],
+      "nodes": [
+        {
+          "coords": [
+            -8,
+            -42
+          ],
+          "name": "LordByronInn",
+          "labelPos": "SE",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            -3,
+            -37
+          ],
+          "name": "HudsonsAleHouse",
+          "labelPos": "SE",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            1,
+            -33
+          ],
+          "name": "GreenManTrumpington",
+          "labelPos": "SE",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            20,
+            -14
+          ],
+          "name": "Alma",
+          "labelPos": "SE",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            22,
+            -12
+          ],
+          "name": "PantonArms",
+          "labelPos": "SE",
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            26,
+            -8
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            27,
+            -6
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            27,
+            -4
+          ],
+          "marker": "interchange",
+          "name": "Regal",
+          "labelPos": "NW",
+          "shiftCoords": [
+            0,
+            -1
+          ],
+          "labelShiftCoords": [
+            0,
+            0
+          ],
+          "canonical": true,
+          "dir": "N"
+        },
+        {
+          "coords": [
+            27,
+            10
+          ],
+          "marker": "interchange",
+          "name": "BrewHouse",
+          "labelPos": "W",
+          "hide": true,
+          "dir": "N"
+        },
+        {
+          "coords": [
+            27,
+            13
+          ],
+          "name": "Maypole",
+          "labelPos": "W",
+          "dir": "N"
+        },
+        {
+          "coords": [
+            27,
+            23
+          ],
+          "marker": "interchange",
+          "name": "OldSpring",
+          "labelPos": "SE",
+          "canonical": true,
+          "dir": "N"
+        },
+        {
+          "coords": [
+            27,
+            25
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            28,
+            27
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            30,
+            29
+          ],
+          "dir": "NE"
+        },
+        {
+          "coords": [
+            32,
+            30
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            34,
+            30
+          ],
+          "name": "MiltonArms",
+          "labelPos": "N",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            40,
+            30
+          ],
+          "name": "GoldenHind",
+          "labelPos": "S",
+          "dir": "E"
+        },
+        {
+          "coords": [
+            42,
+            30
+          ],
+          "dir": "E"
+        },
+        {
+          "coords": [
+            43,
+            31
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            43,
+            33
+          ],
+          "dir": "N"
+        },
+        {
+          "coords": [
+            43,
+            42
+          ],
+          "name": "Blip",
+          "labelPos": "E",
+          "dir": "N"
+        }
+      ]
+    }
+  ],
+  "river": {
+    "name": "River",
+    "label": "River",
+    "shiftCoords": [
+      0,
+      0
+    ],
+    "nodes": [
+      {
+        "coords": [
+          -43,
+          -56
+        ],
+        "dir": "NE"
+      },
+      {
+        "coords": [
+          5,
+          -8
+        ],
+        "dir": "NE"
+      },
+      {
+        "coords": [
+          6,
+          -6
+        ],
+        "dir": "N"
+      },
+      {
+        "coords": [
+          6,
+          12
+        ],
+        "dir": "N"
+      },
+      {
+        "coords": [
+          7,
+          14
+        ],
+        "dir": "NE"
+      },
+      {
+        "coords": [
+          10,
+          17
+        ],
+        "dir": "NE"
+      },
+      {
+        "coords": [
+          12,
+          18
+        ],
+        "dir": "E"
+      },
+      {
+        "coords": [
+          50,
+          18
+        ],
+        "dir": "E"
+      },
+      {
+        "coords": [
+          52,
+          19
+        ],
+        "dir": "NE"
+      },
+      {
+        "coords": [
+          86,
+          53
+        ],
+        "dir": "NE"
+      }
+    ]
+  }
+}
