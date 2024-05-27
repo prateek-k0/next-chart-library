@@ -27,7 +27,7 @@ import minimapTree from '@/../public/chart-thumbnails/tree-minimap.png'
 
 const imageList: { img: StaticImageData, link: string, title: string }[] = [
   { img: arcMouseevents, link: '/charts/arc-diagrams/interactive-arc-diagram', title: 'Interactive Arc Diagram' },
-  { img: minimapTree, link: '/charts/hierarchical/tree', title: 'Tree with Minimap' },
+  { img: minimapTree, link: '/charts/hierarchical/radial-tree', title: 'Tree with Minimap' },
   { img: bubbleScatter, link: '/charts/bubble-charts/scatter-chart', title: 'Bubble scatter plot' },
   { img: chordColored, link: '/charts/pie-charts/chord-chart', title: 'Chord chart' },
   { img: choroplethMap, link: '/charts/maps/choropleth', title: 'Choropleth map' },
@@ -54,10 +54,10 @@ const ImageCollage = () => {
     <div className='w-full columns-1 gap-4 md:columns-2 lg:columns-3 rounded-lg bg-zinc-700 p-4'>
       {imageList.map((image, i) => (
         <Link href={image.link} key={i}>
-          <div className='mb-4 rounded-lg overflow-hidden relative group'>
-            <Image src={image.img} alt={image.title}></Image>
+          <div className='group mb-4 rounded-lg overflow-hidden relative group'>
+            <Image src={image.img} alt={image.title} className=' transition-transform group-hover:scale-110'></Image>
             <div className="desc absolute top-0 w-full h-full backdrop backdrop-blur-[4px] opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out bg-[#50678551] flex items-center justify-center">
-              <p className='text-center translate-y-2 group-hover:translate-y-0 transition-transform duration-200 mx-2 my-auto text-2xl font-medium text-white font-sans'>
+              <p className='text-center translate-y-2 group-hover:translate-y-0 transition-transform mx-2 my-auto text-2xl font-medium text-white font-sans'>
                 {image.title}
               </p>
             </div>

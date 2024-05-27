@@ -6,8 +6,8 @@ import { data } from "./data";
 const ChartComponent = async () => {
   return (
     <ChartWrapper
-      chartTitle="Tree with Minimap"
-      directoryPath="/src/app/charts/hierarchical/tree"
+      chartTitle="Radial Tree with Minimap"
+      directoryPath="/src/app/charts/hierarchical/radial-tree"
     >
       <ChartUtil data={data} />
     </ChartWrapper>
