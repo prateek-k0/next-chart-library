@@ -3,7 +3,7 @@ import CodeBlock from "./CodeBlock";
 import { fetchChartText, fetchChartsFromDirectory } from "@/utils/fetchChartsUtils";
 import path from "path";
 
-const blacklistedFiles = ['error.tsx', 'loading.tsx'];
+const blacklistedFiles = ['error.tsx', 'loading.tsx', 'page.tsx'];
 
 const ChartWrapper = async ({
   chartTitle,

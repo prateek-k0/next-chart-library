@@ -110,7 +110,11 @@ const ChartUtil = ({ data }: ChartProps) => {
             translate(${d.y},0)
           `
     );
-    newnodes.append("circle").attr("r", 3).attr('stroke', '#e11d48').attr('stroke-width', 1.5);
+    newnodes
+      .append("circle")
+      .attr("r", 3)
+      .attr("stroke", "#e11d48")
+      .attr("stroke-width", 1.5);
     self.nodegroup.selectAll("g circle").attr("fill", (d: any) => {
       const altChildren = d.data.altChildren || [];
       const { children } = d.data;
@@ -124,27 +128,30 @@ const ChartUtil = ({ data }: ChartProps) => {
   const renderMinimap = useCallback(() => {
     const container = containerRef.current as HTMLElement;
     const minimapContainer = container.querySelector(".chart-minimap");
-    self.minimapSvg = d3.select(minimapContainer)
-      .html('')
-      .style('width', `${self.minimapWidth}px`)
-      .style('height', `${self.minimapHeight}px`)
-      .append('svg')
-      .attr('width', '100%')
-      .attr('height', '100%')
-      .attr('viewBox', [0, 0, self.width, self.height].join(' '));
+    self.minimapSvg = d3
+      .select(minimapContainer)
+      .html("")
+      .style("width", `${self.minimapWidth}px`)
+      .style("height", `${self.minimapHeight}px`)
+      .append("svg")
+      .attr("width", "100%")
+      .attr("height", "100%")
+      .attr("viewBox", [0, 0, self.width, self.height].join(" "));
     self.minimapChart = self.minimapSvg
-      .append('g')
-      .attr('class', 'chart-group')
-      .attr('transform', `translate(${self.width / 2},${self.height / 2})`);
-    self.gBrush = self.minimapSvg.append('g');
-    self.minimapLinkgroup = self.minimapChart.append('g')
-      .attr('fill', 'none')
+      .append("g")
+      .attr("class", "chart-group")
+      .attr("transform", `translate(${self.width / 2},${self.height / 2})`);
+    self.gBrush = self.minimapSvg.append("g");
+    self.minimapLinkgroup = self.minimapChart
+      .append("g")
+      .attr("fill", "none")
       .attr("stroke", "#888")
-      .attr('stroke-width', 1.5);
+      .attr("stroke-width", 1.5);
 
-      self.minimapNodegroup = self.minimapChart.append('g')
-      .attr('stroke-linejoin', 'round')
-      .attr('stroke-width', 3);
+    self.minimapNodegroup = self.minimapChart
+      .append("g")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-width", 3);
 
     const hierarchyData = d3.hierarchy(data);
     const root = self.tree(hierarchyData);
@@ -152,27 +159,37 @@ const ChartUtil = ({ data }: ChartProps) => {
     const linksData = root.links();
     const nodesData = root.descendants().reverse();
     const miniLinks = self.minimapLinkgroup
-      .selectAll('path')
-      .data(linksData, (d: any) => `${d.source.data.name}_${d.target.data.name}`);
+      .selectAll("path")
+      .data(
+        linksData,
+        (d: any) => `${d.source.data.name}_${d.target.data.name}`
+      );
     miniLinks.exit().remove();
     const r: any = 0.1;
-    const t: any = d3.transition()
+    const t: any = d3
+      .transition()
       .duration(self.animationDuration)
       .ease(d3.easeLinear);
     miniLinks
       .enter()
-      .append('path')
-      .attr('d', d3.linkRadial()
+      .append("path")
+      .attr(
+        "d",
+        d3
+          .linkRadial()
+          .angle((d: any) => d.x)
+          .radius(r)
+      );
+    const allMiniLinks = self.minimapLinkgroup.selectAll("path");
+    allMiniLinks.transition(t).attr(
+      "d",
+      d3
+        .linkRadial()
         .angle((d: any) => d.x)
-        .radius(r));
-    const allMiniLinks = self.minimapLinkgroup.selectAll('path');
-    allMiniLinks
-      .transition(t)
-      .attr('d', d3.linkRadial()
-        .angle((d: any) => d.x)
-        .radius((d: any) => d.y));
+        .radius((d: any) => d.y)
+    );
     const miniNodes = self.minimapNodegroup
-      .selectAll('g')
+      .selectAll("g")
       .data(nodesData, (d: any) => {
         if (d.parent) {
           return d.parent.data.name + d.data.name;
@@ -180,42 +197,57 @@ const ChartUtil = ({ data }: ChartProps) => {
         return d.data.name;
       });
     miniNodes.exit().remove();
-    const newMiniNodes = miniNodes
-      .enter().append('g');
+    const newMiniNodes = miniNodes.enter().append("g");
 
-    const allMiniNodes = self.minimapNodegroup.selectAll('g');
-    allMiniNodes
-      .attr('transform', (d: any) => `
+    const allMiniNodes = self.minimapNodegroup.selectAll("g");
+    allMiniNodes.attr(
+      "transform",
+      (d: any) => `
         rotate(${(d.x * 180) / Math.PI - 90})
         translate(${d.y},0)
-      `);
+      `
+    );
     newMiniNodes
-    .append("circle").attr("r", 3).attr('stroke', '#e11d48').attr('stroke-width', 1.5);
+      .append("circle")
+      .attr("r", 3)
+      .attr("stroke", "#e11d48")
+      .attr("stroke-width", 1.5);
 
-      self.minimapNodegroup.selectAll('g circle').attr('fill', (d: any) => {
+    self.minimapNodegroup.selectAll("g circle").attr("fill", (d: any) => {
       const altChildren = d.data.altChildren || [];
       const { children } = d.data;
-      return d.children || (children && (children.length > 0 || altChildren.length > 0)) ? '#555' : '#999';
+      return d.children ||
+        (children && (children.length > 0 || altChildren.length > 0))
+        ? "#555"
+        : "#999";
     });
   }, [self, data]);
 
   const enableZoom = useCallback(() => {
     const onBrush = (event: any) => {
-      if (event.sourceEvent && event.sourceEvent.type === 'zoom') return;
+      if (event.sourceEvent && event.sourceEvent.type === "zoom") return;
       const [[bx1, by1]] = event.selection;
       const zoomScale = d3.zoomTransform(self.panWrapper.node()).k;
       // console.log(event.sourceEvent);
       if (event.sourceEvent) {
         self.svg.call(
           self.zoom.transform,
-          d3.zoomIdentity.translate(-bx1 * zoomScale, -by1 * zoomScale).scale(zoomScale)
+          d3.zoomIdentity
+            .translate(-bx1 * zoomScale, -by1 * zoomScale)
+            .scale(zoomScale)
         );
       }
-      self.panWrapper.attr(...getTranslate(-bx1 * zoomScale, -by1 * zoomScale, zoomScale));
+      self.panWrapper.attr(
+        ...getTranslate(-bx1 * zoomScale, -by1 * zoomScale, zoomScale)
+      );
     };
-    self.brush = d3.brush()
-      .extent([[0, 0], [self.width, self.height]])
-      .on('brush', onBrush);
+    self.brush = d3
+      .brush()
+      .extent([
+        [0, 0],
+        [self.width, self.height],
+      ])
+      .on("brush", onBrush);
     self.gBrush.call(self.brush);
     const onZoom = (event: any) => {
       // console.log(event.sourceEvent);
@@ -223,27 +255,39 @@ const ChartUtil = ({ data }: ChartProps) => {
       self.panWrapper.attr(...getTranslate(t.x, t.y, t.k));
       if (event.sourceEvent !== null || event.sourceEvent !== undefined) {
         // const [boxDimX, boxDimY] = [this.width / t.k, this.height / t.k];
-        const [boxDimX, boxDimY] = [Math.min(self.viewportWidth, self.width) / t.k, self.viewportHeight / t.k];
-        const [x1, y1] = [Math.min(Math.max(-t.x / t.k, 0), self.width - boxDimX), Math.min(Math.max(-t.y / t.k, 0), self.height - boxDimY)];
+        const [boxDimX, boxDimY] = [
+          Math.min(self.viewportWidth, self.width) / t.k,
+          self.viewportHeight / t.k,
+        ];
+        const [x1, y1] = [
+          Math.min(Math.max(-t.x / t.k, 0), self.width - boxDimX),
+          Math.min(Math.max(-t.y / t.k, 0), self.height - boxDimY),
+        ];
         self.brush.move(self.gBrush, [
           [x1, y1],
-          [(x1 + boxDimX), (y1 + boxDimY)]
+          [x1 + boxDimX, y1 + boxDimY],
         ]);
       }
     };
-    self.zoom = d3.zoom()
+    self.zoom = d3
+      .zoom()
       .scaleExtent([1, 2])
-      .translateExtent([[0, 0], [Math.max(self.width, self.viewportWidth), self.height]]) // world extent
-      .extent([[0, 0], [self.viewportWidth, self.viewportHeight]]) // viewport extent
-      .on('zoom', onZoom);
-    self.svg
-      .call(self.zoom);
+      .translateExtent([
+        [0, 0],
+        [Math.max(self.width, self.viewportWidth), self.height],
+      ]) // world extent
+      .extent([
+        [0, 0],
+        [self.viewportWidth, self.viewportHeight],
+      ]) // viewport extent
+      .on("zoom", onZoom);
+    self.svg.call(self.zoom);
 
-      self.minimapSvg.selectAll('.handle').remove();
-      self.minimapSvg.selectAll('.overlay').remove();
-      self.brush.move(self.gBrush, [
+    self.minimapSvg.selectAll(".handle").remove();
+    self.minimapSvg.selectAll(".overlay").remove();
+    self.brush.move(self.gBrush, [
       [0, 0],
-      [Math.min(self.width, self.viewportWidth), self.viewportHeight]
+      [Math.min(self.width, self.viewportWidth), self.viewportHeight],
     ]);
   }, [self]);
 
@@ -254,7 +298,7 @@ const ChartUtil = ({ data }: ChartProps) => {
     if (!container || !chartContainer || !minimapContainer) return;
     self.svg = d3
       .select(chartContainer)
-      .html('')
+      .html("")
       .append("svg")
       .attr("width", "100%")
       .attr("height", self.viewportHeight);
@@ -279,7 +323,10 @@ const ChartUtil = ({ data }: ChartProps) => {
   useResizeObserver(containerRef, resizeHandler);
 
   return (
-    <div ref={containerRef} className="relative border border-zinc-500 overflow-hidden rounded-lg">
+    <div
+      ref={containerRef}
+      className="relative border border-zinc-500 overflow-hidden rounded-lg"
+    >
       <div className="chart-wrapper"></div>
       <div className="chart-minimap absolute top-4 right-4 border border-zinc-500 bg-black overflow-hidden rounded-lg"></div>
     </div>
