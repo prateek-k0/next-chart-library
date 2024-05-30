@@ -19,7 +19,7 @@ export default function Error({
     <div className='flex items-center justify-center flex-col gap-6 my-16'>
       <IconError width={128} height={128} className="text-red-500"/>
       <p className="text-4xl font-extralight font-sans">Something went wrong!</p>
-      <button className="px-6 py-2 border rounded-md bg-zinc-700 hover:bg-zinc-800">
+      <button className="px-6 py-2 border rounded-md bg-zinc-700 hover:bg-zinc-800" onClick={reset}>
         Reload 
       </button>
     </div>
