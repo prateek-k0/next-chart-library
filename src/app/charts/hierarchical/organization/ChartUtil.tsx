@@ -163,13 +163,13 @@ const ChartUtil = ({ data }: { data: DataType }) => {
           nodeGroup
             .attr("transform", (d: any) =>
               d.parent !== null
-                ? `translate(${d.parent.y},${d.parent.x})`
+                ? `translate(${d.parent.x},${d.parent.y})`
                 : `translate(${0},${0})`
             )
             .attr("opacity", 0)
             .transition()
             .duration(self.transitionDuration)
-            .attr("transform", (d: any) => `translate(${d.y},${d.x})`)
+            .attr("transform", (d: any) => `translate(${d.x},${d.y})`)
             .attr("opacity", 1);
           nodeGroup
             .append("rect")
@@ -265,7 +265,7 @@ const ChartUtil = ({ data }: { data: DataType }) => {
           update
             .transition()
             .duration(self.transitionDuration)
-            .attr("transform", (d: any) => `translate(${d.y},${d.x})`);
+            .attr("transform", (d: any) => `translate(${d.x},${d.y})`);
           update
             .select(".expand-trigger")
             .select("g")
@@ -298,7 +298,7 @@ const ChartUtil = ({ data }: { data: DataType }) => {
             .duration(self.transitionDuration)
             .attr("transform", (d: any) =>
               d.parent !== null
-                ? `translate(${d.parent.y},${d.parent.x})`
+                ? `translate(${d.parent.x},${d.parent.y})`
                 : `translate(${0},${0})`
             )
             .attr("opacity", 0)
@@ -330,10 +330,10 @@ const ChartUtil = ({ data }: { data: DataType }) => {
               const targetNode = self.treeNodeQMap.get(target);
               if (!sourceNode || !targetNode) return "";
               const points = `
-              ${sourceNode.y + self.colPadding + rectWidth} ${sourceNode.x},
-              ${sourceNode.y + 2 * self.colPadding + rectWidth} ${sourceNode.x},
-              ${sourceNode.y + 2 * self.colPadding + rectWidth} ${targetNode.x},
-              ${targetNode.y + self.colPadding},${targetNode.x}
+              ${sourceNode.x + self.colPadding + rectWidth} ${sourceNode.y},
+              ${sourceNode.x + 2 * self.colPadding + rectWidth} ${sourceNode.y},
+              ${sourceNode.x + 2 * self.colPadding + rectWidth} ${targetNode.y},
+              ${targetNode.x + self.colPadding},${targetNode.y}
             `;
               return points;
             });
@@ -352,10 +352,10 @@ const ChartUtil = ({ data }: { data: DataType }) => {
               const targetNode = self.treeNodeQMap.get(target);
               if (!sourceNode || !targetNode) return "";
               const points = `
-            ${sourceNode.y + self.colPadding + rectWidth} ${sourceNode.x},
-            ${sourceNode.y + 2 * self.colPadding + rectWidth} ${sourceNode.x},
-            ${sourceNode.y + 2 * self.colPadding + rectWidth} ${targetNode.x},
-            ${targetNode.y + self.colPadding},${targetNode.x}
+            ${sourceNode.x + self.colPadding + rectWidth} ${sourceNode.y},
+            ${sourceNode.x + 2 * self.colPadding + rectWidth} ${sourceNode.y},
+            ${sourceNode.x + 2 * self.colPadding + rectWidth} ${targetNode.y},
+            ${targetNode.x + self.colPadding},${targetNode.y}
           `;
               return points;
             });
@@ -377,7 +377,6 @@ const ChartUtil = ({ data }: { data: DataType }) => {
     self.treeNodeQMap.clear();
     self.linkSet.clear();
     self.treeRoot = d3.hierarchy(self.rebuiltTreeRoot);
-    console.log(self.treeRoot);
     const treeMap = d3
       .tree<TreeNode>()
       .nodeSize([self.rectHeight * 2, self.colWidth])
@@ -386,10 +385,11 @@ const ChartUtil = ({ data }: { data: DataType }) => {
     getTreeLinks(treeDatain);
     self.nodesOrdered = treeDatain.descendants();
     self.nodesOrdered.forEach((node: any) => {
-      self.topY = Math.min(self.topY, node.x);
-      self.bottomY = Math.max(self.bottomY, node.x);
+      // for horizontal layout
+      [node.x, node.y] = [node.y, node.x];
+      self.topY = Math.min(self.topY, node.y);
+      self.bottomY = Math.max(self.bottomY, node.y);
       self.treeNodeQMap.set(node.data.id, node);
-      console.log(node.data.name, node.y, node.x);
       node.id = node.data.id;
     });
     renderLinks();
