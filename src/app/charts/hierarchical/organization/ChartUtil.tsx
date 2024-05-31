@@ -342,7 +342,6 @@ const ChartUtil = ({ data }: { data: DataType }) => {
         (update: any) => {
           update
             .select("polyline")
-            .attr("stroke", "transparent")
             .transition()
             .duration(self.transitionDuration)
             .attr("stroke", self.accentColor)
@@ -380,7 +379,7 @@ const ChartUtil = ({ data }: { data: DataType }) => {
     const treeMap = d3
       .tree<TreeNode>()
       .nodeSize([self.rectHeight * 2, self.colWidth])
-      .separation((a, b) => (a.parent === b.parent ? 1 : 2));
+      .separation((a, b) => (a.parent === b.parent ? 1 : 1.5));
     const treeDatain = treeMap(self.treeRoot);
     getTreeLinks(treeDatain);
     self.nodesOrdered = treeDatain.descendants();
@@ -390,7 +389,6 @@ const ChartUtil = ({ data }: { data: DataType }) => {
       self.topY = Math.min(self.topY, node.y);
       self.bottomY = Math.max(self.bottomY, node.y);
       self.treeNodeQMap.set(node.data.id, node);
-      node.id = node.data.id;
     });
     renderLinks();
     renderNodes();
@@ -449,7 +447,7 @@ const ChartUtil = ({ data }: { data: DataType }) => {
   }, [renderFunc]);
 
   const resizeHandler = useCallback(() => {
-    containerRef.current !== null && renderFunc();
+    // containerRef.current !== null && renderFunc();
   }, [renderFunc]);
 
   useResizeObserver(containerRef, resizeHandler);
