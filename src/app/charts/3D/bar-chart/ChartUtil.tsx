@@ -126,6 +126,75 @@ const ChartUtil = ({ data }: ChartProps) => {
       });
   }, [self, xShift, yShift]);
 
+  const render3DBar = useCallback((d:any, nodeGroup: SVGGElement, xStart: number, yStart: number, xOffset: number, yOffset: number) => {
+    d3.select(nodeGroup)
+      .append("path")
+      .attr("class", "bar-face -left")
+      .attr("d", (d: any) => {
+        return `
+            M${xStart},${yStart}
+            l${xOffset},${-yOffset}
+            v${self.height - yStart}
+            l${-xOffset},${yOffset}
+            Z
+          `;
+      })
+      .attr("fill", self.barFill)
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 0.5);
+
+    d3.select(nodeGroup)
+      .append("path")
+      .attr("class", "bar-face -right")
+      .attr("d", (d: any) => {
+        return `
+            M${xStart + self.barWidth},${yStart}
+            l${xOffset},${-yOffset}
+            v${self.height - yStart}
+            l${-xOffset},${yOffset}
+            Z
+          `;
+      })
+      .attr("fill", self.barFill)
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 0.5);
+
+    if (zAngle > 90) {
+      d3.select(nodeGroup).select(".bar-face.-right").lower();
+    }
+
+    d3.select(nodeGroup)
+      .append("path")
+      .attr("class", "bar-face -front")
+      .attr("d", (d: any) => {
+        return `
+          M${xStart},${yStart}
+          h${self.barWidth}
+          v${self.height - yStart}
+          h${-self.barWidth}Z
+        `;
+      })
+      .attr("fill", self.barFill)
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 0.5);
+
+    d3.select(nodeGroup)
+      .append("path")
+      .attr("class", "bar-face -top")
+      .attr("d", (d: any) => {
+        return `
+        M${xStart},${yStart}
+        l${xOffset},${-yOffset}
+        h${self.barWidth}
+        l${-xOffset},${yOffset}
+        Z
+      `;
+      })
+      .attr("fill", self.barFill)
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 0.5);
+  }, [zAngle, self]);
+
   const renderBars = useCallback(() => {
     const barGroup = self.chart
       .selectAll("g.bar-group")
@@ -134,133 +203,16 @@ const ChartUtil = ({ data }: ChartProps) => {
       .append("g")
       .attr("class", "bar-group");
 
-    if (zAngle > 90) {
-      barGroup
-        .append("path")
-        .attr("class", "bar-face -right")
-        .attr("d", (d: any) => {
-          const initPositionX =
-            self.xScale(d.focusGroup) +
-            self.xScale.bandwidth() / 2 +
-            self.barWidth / 2;
-          const initPositionY = self.yScale(d.value);
-          return `
-            M${initPositionX},${initPositionY}
-            l${xShift},${-yShift}
-            v${self.height - initPositionY}
-            l${-xShift},${yShift}
-            Z
-          `;
-        })
-        .attr("fill", self.barFill)
-        .attr("stroke", "#fff")
-        .attr("stroke-width", 0.5);
-
-      barGroup
-        .append("path")
-        .attr("class", "bar-face -left")
-        .attr("d", (d: any) => {
-          const initPositionX =
-            self.xScale(d.focusGroup) +
-            self.xScale.bandwidth() / 2 -
-            self.barWidth / 2;
-          const initPositionY = self.yScale(d.value);
-          return `
-            M${initPositionX},${initPositionY}
-            l${xShift},${-yShift}
-            v${self.height - initPositionY}
-            l${-xShift},${yShift}
-            Z
-          `;
-        })
-        .attr("fill", self.barFill)
-        .attr("stroke", "#fff")
-        .attr("stroke-width", 0.5);
-    } else {
-      barGroup
-        .append("path")
-        .attr("class", "bar-face -left")
-        .attr("d", (d: any) => {
-          const initPositionX =
-            self.xScale(d.focusGroup) +
-            self.xScale.bandwidth() / 2 -
-            self.barWidth / 2;
-          const initPositionY = self.yScale(d.value);
-          return `
-            M${initPositionX},${initPositionY}
-            l${xShift},${-yShift}
-            v${self.height - initPositionY}
-            l${-xShift},${yShift}
-            Z
-          `;
-        })
-        .attr("fill", self.barFill)
-        .attr("stroke", "#fff")
-        .attr("stroke-width", 0.5);
-
-      barGroup
-        .append("path")
-        .attr("class", "bar-face -right")
-        .attr("d", (d: any) => {
-          const initPositionX =
-            self.xScale(d.focusGroup) +
-            self.xScale.bandwidth() / 2 +
-            self.barWidth / 2;
-          const initPositionY = self.yScale(d.value);
-          return `
-            M${initPositionX},${initPositionY}
-            l${xShift},${-yShift}
-            v${self.height - initPositionY}
-            l${-xShift},${yShift}
-            Z
-          `;
-        })
-        .attr("fill", self.barFill)
-        .attr("stroke", "#fff")
-        .attr("stroke-width", 0.5);
-    }
-
     barGroup
-      .append("path")
-      .attr("class", "bar-face -front")
-      .attr("d", (d: any) => {
-        const initPositionX =
+      .each((d: any, i: number, nodes: SVGGElement[] | ArrayLike<SVGGElement>) => {
+        const xStart = 
           self.xScale(d.focusGroup) +
           self.xScale.bandwidth() / 2 -
           self.barWidth / 2;
-        const initPositionY = self.yScale(d.value);
-        return `
-          M${initPositionX},${initPositionY}
-          h${self.barWidth}
-          v${self.height - initPositionY}
-          h${-self.barWidth}Z
-        `;
-      })
-      .attr("fill", self.barFill)
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 0.5);
-
-    barGroup
-      .append("path")
-      .attr("class", "bar-face -top")
-      .attr("d", (d: any) => {
-        const initPositionX =
-          self.xScale(d.focusGroup) +
-          self.xScale.bandwidth() / 2 -
-          self.barWidth / 2;
-        const initPositionY = self.yScale(d.value);
-        return `
-        M${initPositionX},${initPositionY}
-        l${xShift},${-yShift}
-        h${self.barWidth}
-        l${-xShift},${yShift}
-        Z
-      `;
-      })
-      .attr("fill", self.barFill)
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 0.5);
-  }, [data, xShift, yShift, self, zAngle]);
+        const yStart = self.yScale(d.value);
+        render3DBar(d, nodes[i], xStart, yStart, xShift, yShift);
+      });
+  }, [data, xShift, yShift, self, zAngle, render3DBar]);
 
   const renderFunc = useCallback(() => {
     const container = containerRef.current as HTMLElement;
