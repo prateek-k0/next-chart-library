@@ -1,0 +1,298 @@
+"use client";
+import React, { useEffect, useCallback, useRef } from "react";
+import * as d3 from "d3";
+import { useResizeObserver } from "@/hooks/useResizeObserver";
+import { DataItemType, DataType, TreeNode } from "./data";
+
+const ChartUtil = ({ data }: { data: DataType }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const configRef = useRef({
+    width: 0,
+    height: 280,
+    margin: {
+      top: 25,
+      bottom: 25,
+      left: 0,
+      right: 0,
+    },
+    svg: d3.select(null).append("svg") as d3.Selection<
+      SVGSVGElement,
+      unknown,
+      Element | null,
+      undefined
+    >,
+    chart: null as any,
+    root: null as any,
+    rawData: {} as DataType,
+    nodeQMap: new Map(),
+    linkSet: new Set() as Set<string>,
+    nodesOrdered: [] as any[],
+    topY: 0,
+    bottomY: 0,
+    rebuiltTreeRoot: {} as TreeNode,
+    nCols: 1,
+    colWidth: 0,
+    nodeColors: [
+      "#003B73",
+      "#0074B7",
+      "#61A3D9",
+      "#553C71",
+      "#5B2693",
+      "#A36ED6",
+    ],
+    rectHeight: 32,
+    colPadding: 48,
+    levelOrderData: [] as string[][],
+  });
+  const self = configRef.current;
+
+  function transformRawData() {
+    self.nodeQMap.clear();
+    self.linkSet.clear();
+    self.levelOrderData = new Array(10).fill(null).map(() => new Array(0)); // max 10 layers
+    self.rawData = data;
+    // calculate total number of layers
+    self.nCols = 0;
+    const nodeList: TreeNode[] = [];
+    // push data for dummy root
+    const l1DataIds = self.rawData["level0"].map((n) => n.id);
+    const progenitorNode: TreeNode = {
+      id: "root",
+      name: "root",
+      depth: 0,
+      next: [...l1DataIds],
+      children: [],
+    };
+    nodeList.push(progenitorNode);
+    self.nodeQMap.set(progenitorNode.id, progenitorNode);
+    // add column data from rawData
+    Object.keys(self.rawData).forEach((key: string) => {
+      self.rawData[key].forEach((node) => {
+        const treeNode: TreeNode = { ...node, children: [], depth: 0 };
+        nodeList.push(treeNode);
+        self.nodeQMap.set(node.id, treeNode);
+      });
+    });
+    // build tree layout
+    [self.rebuiltTreeRoot] = nodeList;
+    buildDAG(self.rebuiltTreeRoot);
+  }
+
+  function buildDAG(
+    root: TreeNode,
+    depth: number = 0,
+    visited: { [prop: string]: boolean } = {}
+  ) {
+    root.depth = depth;
+    self.nCols = Math.max(self.nCols, depth + 1);
+    self.levelOrderData[depth].push(root.id);
+    root.next.forEach((nextId) => {
+      self.linkSet.add(`${root.id}$${nextId}`);
+      if (visited[nextId] !== true) {
+        // if subtree not traversed already
+        const childNode = self.nodeQMap.get(nextId);
+        if (childNode !== undefined || childNode !== null) {
+          root.children.push(childNode);
+          buildDAG(childNode, depth + 1, visited);
+        }
+      }
+    });
+    visited[root.id] = true; // postorder-ly set the current subtree to traversed
+  }
+
+  function storeDepthNodeData() {
+    const nodeRadius: number = self.rectHeight / 2;
+    const nodePadding: number = self.rectHeight / 4;
+    const maxTreeDepth: number = self.nCols + 1;
+    for (let d = 0; d < maxTreeDepth; d++) {
+      const mapLen: number = self.levelOrderData[d].length;
+      for (let i = 0; i < self.levelOrderData[d].length; i++) {
+        const yPos = (i - (mapLen - 1) / 2) * (2 * (nodeRadius + nodePadding));
+        const node = self.nodeQMap.get(self.levelOrderData[d][i]);
+        self.topY = Math.min(self.topY, yPos);
+        self.bottomY = Math.max(self.bottomY, yPos);
+        node.y = yPos;
+        node.x = self.colWidth * (d - 1);
+      }
+    }
+  }
+
+  function renderSVG() {
+    const container = containerRef.current as HTMLElement;
+    if (!container) return;
+    self.width = container.offsetWidth - self.margin.left - self.margin.right;
+    self.colWidth = self.width / (self.nCols - 1 || 1);
+    self.svg.remove();
+    self.svg = d3
+      .select(container)
+      .html("")
+      .append("svg")
+      .attr("width", container.offsetWidth)
+      .attr("height", self.height + self.margin.top + self.margin.bottom)
+      .attr("class", "hierarchy-tree");
+    self.chart = self.svg
+      .append("g")
+      .attr("class", "wrapper")
+      .attr(
+        "transform",
+        `translate(${self.margin.left},${self.margin.top + self.height / 2})`
+      );
+  }
+
+  function renderNodes() {
+    self.nodesOrdered = [...self.nodeQMap.values()];
+    const nodeGroup = self.chart
+      .append("g")
+      .attr("class", "node-container")
+      .selectAll("g.node")
+      .data(self.nodesOrdered, (d: any) => d.id);
+    const nodeGroupItem = nodeGroup
+      .enter()
+      .append("g")
+      .attr("class", "node")
+      .attr(
+        "transform",
+        (d: any) =>
+          `translate(${self.nodeQMap.get(d.id).x},${self.nodeQMap.get(d.id).y})`
+      );
+    nodeGroupItem
+      .append("rect")
+      .attr("class", "nodeRect")
+      .attr("x", self.colPadding)
+      .attr("y", -self.rectHeight / 2)
+      .attr("width", self.colWidth - 2 * self.colPadding)
+      .attr("height", self.rectHeight)
+      .style("fill", "transparent")
+      .attr("stroke", (d: any) => self.nodeColors[d.depth - 1]);
+
+    const textForeginObj = nodeGroupItem
+      .append("foreignObject")
+      .attr("width", self.colWidth - 2 * self.colPadding)
+      .attr("height", self.rectHeight)
+      .attr("x", self.colPadding)
+      .attr("y", -self.rectHeight / 2);
+    textForeginObj
+      .append("xhtml:div")
+      .attr(
+        "style",
+        `
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+      `
+      )
+      .append("div")
+      .attr(
+        "style",
+        `
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        place-content: center;
+        justify-content: center;
+        max-width: 100%;
+        max-height: 32px;
+        line-height: 16px;
+        font-family: 'Graphik';
+        font-weight: 400;
+        font-size: 10px;
+        text-align: center;
+        overflow: hidden;
+        word-break: break-word;
+        padding: 0 5px;
+      `
+      )
+      .text((d: any) => d.name);
+  }
+
+  function resetContainerHeight() {
+    const graphHeight: number = self.bottomY - self.topY + self.rectHeight;
+    const newHeight: number =
+      graphHeight + self.margin.top + self.margin.bottom + self.rectHeight / 2;
+    self.height = graphHeight;
+    self.svg.attr("height", newHeight);
+    self.chart.attr(
+      "transform",
+      `translate(${0},${self.rectHeight / 2 + self.margin.top - self.topY})`
+    );
+  }
+
+  function renderLinks() {
+    const link = self.chart
+      .append("g")
+      .attr("class", "link-container")
+      .selectAll("path.link")
+      .data(Array.from(self.linkSet) as string[], (d: string) => d);
+
+    self.svg
+      .append("defs")
+      .append("marker")
+      .attr("id", "end-arrow")
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 0)
+      .attr("refY", 0)
+      .attr("markerWidth", 11)
+      .attr("markerHeight", 12)
+      .attr("orient", "auto")
+      .attr("class", "arrow")
+      .attr("fill", "#fff")
+      .attr("orient", "auto-start-reverse")
+      .append("path")
+      .attr("d", "M0,-5L5,0L0,5");
+
+    link
+      .enter()
+      .append("path")
+      .attr("class", "link")
+      .attr("fill", "none")
+      .attr("stroke", "#fff")
+      .attr("stroke-width", "1px")
+      .attr("opacity", "0.5")
+      .attr("marker-end", "url(#end-arrow)")
+      .attr("d", (d: string) => diagonalDepthWise(d));
+  }
+
+  function diagonalDepthWise(linkItem: string) {
+    const [s, d] = linkItem.split("$");
+    if (s === "root") return null;
+    const x1: number = self.nodeQMap.get(s).x + self.colWidth - self.colPadding;
+    const x2: number = self.nodeQMap.get(d).x + self.colPadding - 5;
+    const y1: number = self.nodeQMap.get(s).y;
+    const y2: number = self.nodeQMap.get(d).y;
+    const path = `M ${x1} ${y1} C ${(x1 + x2) / 2} ${y1}, ${
+      (x1 + x2) / 2
+    } ${y2}, ${x2} ${y2}`;
+    return path;
+  }
+
+  const renderFunc = useCallback(() => {
+    const container = containerRef.current as HTMLElement;
+    if (!container) return;
+    renderSVG();
+    storeDepthNodeData();
+    renderNodes();
+    renderLinks();
+    resetContainerHeight();
+  }, [data]);
+
+  useEffect(() => {
+    transformRawData();
+  }, []);
+
+  useEffect(() => {
+    containerRef.current !== null && renderFunc();
+  }, [renderFunc]);
+
+  const resizeHandler = useCallback(() => {
+    containerRef.current !== null && renderFunc();
+  }, [renderFunc]);
+
+  useResizeObserver(containerRef, resizeHandler);
+
+  return <div ref={containerRef}></div>;
+};
+
+export default ChartUtil;
