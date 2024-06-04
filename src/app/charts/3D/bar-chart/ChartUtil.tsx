@@ -126,74 +126,126 @@ const ChartUtil = ({ data }: ChartProps) => {
       });
   }, [self, xShift, yShift]);
 
-  const render3DBar = useCallback((d:any, nodeGroup: SVGGElement, xStart: number, yStart: number, xOffset: number, yOffset: number) => {
-    d3.select(nodeGroup)
-      .append("path")
-      .attr("class", "bar-face -left")
-      .attr("d", (d: any) => {
-        return `
-            M${xStart},${yStart}
-            l${xOffset},${-yOffset}
+  const render3DBar = useCallback(
+    (
+      nodeGroup: SVGGElement,
+      xStart: number,
+      yStart: number,
+      xDepth: number,
+      yDepth: number,
+      xOffset: number = 0,
+      yOffset: number = 0
+    ) => {
+      // dots for reference
+      // d3.select(nodeGroup)
+      //   .append("circle")
+      //   .attr("cx", xStart + xOffset)
+      //   .attr("cy", self.height - yOffset)
+      //   .attr("r", 4)
+      //   .attr("fill", "red");
+      // d3.select(nodeGroup)
+      //   .append("circle")
+      //   .attr("cx", xStart + xOffset + self.barWidth)
+      //   .attr("cy", self.height - yOffset)
+      //   .attr("r", 4)
+      //   .attr("fill", "red");
+      // d3.select(nodeGroup)
+      //   .append("circle")
+      //   .attr("cx", xStart + xOffset)
+      //   .attr("cy", yStart - yOffset)
+      //   .attr("r", 4)
+      //   .attr("fill", "red");
+      // d3.select(nodeGroup)
+      //   .append("circle")
+      //   .attr("cx", xStart + xOffset + self.barWidth)
+      //   .attr("cy", yStart - yOffset)
+      //   .attr("r", 4)
+      //   .attr("fill", "red");
+      // d3.select(nodeGroup)
+      //   .append("circle")
+      //   .attr("cx", xStart + xOffset + xDepth)
+      //   .attr("cy", yStart - yOffset - yDepth)
+      //   .attr("r", 4)
+      //   .attr("fill", "red");
+      // d3.select(nodeGroup)
+      //   .append("circle")
+      //   .attr("cx", xStart + xOffset + self.barWidth + xDepth)
+      //   .attr("cy", yStart - yOffset - yDepth)
+      //   .attr("r", 4)
+      //   .attr("fill", "red");
+      d3.select(nodeGroup)
+        .append("path")
+        .attr("class", "bar-face -left")
+        .attr(
+          "d",
+          `
+            M${xStart + xOffset},${yStart - yOffset}
+            l${xDepth},${-yDepth}
             v${self.height - yStart}
-            l${-xOffset},${yOffset}
+            l${-xDepth},${yDepth}
             Z
-          `;
-      })
-      .attr("fill", self.barFill)
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 0.5);
+          `
+        )
+        .attr("fill", self.barFill)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.5);
 
-    d3.select(nodeGroup)
-      .append("path")
-      .attr("class", "bar-face -right")
-      .attr("d", (d: any) => {
-        return `
-            M${xStart + self.barWidth},${yStart}
-            l${xOffset},${-yOffset}
+      d3.select(nodeGroup)
+        .append("path")
+        .attr("class", "bar-face -right")
+        .attr(
+          "d",
+          `
+            M${xStart + self.barWidth + xOffset},${yStart - yOffset}
+            l${xDepth},${-yDepth}
             v${self.height - yStart}
-            l${-xOffset},${yOffset}
+            l${-xDepth},${yDepth}
             Z
-          `;
-      })
-      .attr("fill", self.barFill)
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 0.5);
+          `
+        )
+        .attr("fill", self.barFill)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.5);
 
-    if (zAngle > 90) {
-      d3.select(nodeGroup).select(".bar-face.-right").lower();
-    }
+      if (zAngle > 90) {
+        d3.select(nodeGroup).select(".bar-face.-right").lower();
+      }
 
-    d3.select(nodeGroup)
-      .append("path")
-      .attr("class", "bar-face -front")
-      .attr("d", (d: any) => {
-        return `
-          M${xStart},${yStart}
-          h${self.barWidth}
-          v${self.height - yStart}
-          h${-self.barWidth}Z
-        `;
-      })
-      .attr("fill", self.barFill)
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 0.5);
+      d3.select(nodeGroup)
+        .append("path")
+        .attr("class", "bar-face -front")
+        .attr(
+          "d",
+          `
+            M${xStart + xOffset},${yStart - yOffset}
+            h${self.barWidth}
+            v${self.height - yStart}
+            h${-self.barWidth}Z
+          `
+        )
+        .attr("fill", self.barFill)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.5);
 
-    d3.select(nodeGroup)
-      .append("path")
-      .attr("class", "bar-face -top")
-      .attr("d", (d: any) => {
-        return `
-        M${xStart},${yStart}
-        l${xOffset},${-yOffset}
-        h${self.barWidth}
-        l${-xOffset},${yOffset}
-        Z
-      `;
-      })
-      .attr("fill", self.barFill)
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 0.5);
-  }, [zAngle, self]);
+      d3.select(nodeGroup)
+        .append("path")
+        .attr("class", "bar-face -top")
+        .attr(
+          "d",
+          `
+            M${xStart + xOffset},${yStart - yOffset}
+            l${xDepth},${-yDepth}
+            h${self.barWidth}
+            l${-xDepth},${yDepth}
+            Z
+          `
+        )
+        .attr("fill", self.barFill)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.5);
+    },
+    [zAngle, self]
+  );
 
   const renderBars = useCallback(() => {
     const barGroup = self.chart
@@ -203,15 +255,24 @@ const ChartUtil = ({ data }: ChartProps) => {
       .append("g")
       .attr("class", "bar-group");
 
-    barGroup
-      .each((d: any, i: number, nodes: SVGGElement[] | ArrayLike<SVGGElement>) => {
-        const xStart = 
+    barGroup.each(
+      (d: any, i: number, nodes: SVGGElement[] | ArrayLike<SVGGElement>) => {
+        const xStart =
           self.xScale(d.focusGroup) +
           self.xScale.bandwidth() / 2 -
           self.barWidth / 2;
         const yStart = self.yScale(d.value);
-        render3DBar(d, nodes[i], xStart, yStart, xShift, yShift);
-      });
+        render3DBar(
+          nodes[i],
+          xStart,
+          yStart,
+          xShift / 2,
+          yShift / 2,
+          xShift / 4,
+          yShift / 4
+        );
+      }
+    );
   }, [data, xShift, yShift, self, zAngle, render3DBar]);
 
   const renderFunc = useCallback(() => {
