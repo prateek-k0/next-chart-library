@@ -5,47 +5,47 @@ import ChartUtil from './ChartUtil';
 const data = [
   {
     focusGroup: 'Iaas',
-    value: 36,
+    values: [36,20,38],
   },
   {
     focusGroup: 'Paas',
-    value: 56,
+    values: [56,40,68],
   },
   {
     focusGroup: 'App Dev',
-    value: 46,
+    values: [46,48,52],
   },
   {
     focusGroup: 'App Support',
-    value: 20,
+    values: [20,25,30],
   },
   {
     focusGroup: 'Commute',
-    value: 96,
+    values: [96,84,128],
   },
   {
     focusGroup: 'Network',
-    value: 46,
+    values: [46,70,52],
   },
   {
     focusGroup: 'Storage',
-    value: 46,
+    values: [46,24,72],
   },
   {
     focusGroup: 'On prem',
-    value: 30,
+    values: [30,60,90],
   },
   {
     focusGroup: 'Saas',
-    value: 68,
+    values: [68,60,74],
   },
 ];
 
 const ChartComponent = async () => {
   return (
     <ChartWrapper
-      chartTitle="3D Bar Chart"
-      directoryPath="/src/app/charts/3D/bar-chart"
+      chartTitle="z - Stacked Bar Chart"
+      directoryPath="/src/app/charts/3D/z-stacked-bar-chart"
     >
       <ChartUtil data={data} />
     </ChartWrapper>
