@@ -1,70 +1,49 @@
-import React from 'react'
+import React from "react";
 import ChartWrapper from "@/components/common/ChartWrapper";
-import ChartUtil from './ChartUtil';
+import ChartUtil from "./ChartUtil";
 
 const data = [
   {
-    focusGroup: 'Iaas',
-    value: 36,
-    lineValue: 40,
-    color: '#175F8C',
+    focusGroup: "Iaas",
+    values: [36, 20, 38],
   },
   {
-    focusGroup: 'Paas',
-    value: 56,
-    lineValue: 45,
-    color: '#175F8C',
+    focusGroup: "Paas",
+    values: [56, 40, 68],
   },
   {
-    focusGroup: 'App Dev',
-    value: 46,
-    lineValue: 12,
-    color: '#175F8C',
+    focusGroup: "App Dev",
+    values: [46, 48, 52],
   },
   {
-    focusGroup: 'App Support',
-    value: 20,
-    lineValue: 70,
-    color: '#175F8C',
+    focusGroup: "App Support",
+    values: [20, 25, 30],
   },
   {
-    focusGroup: 'Commute',
-    value: 96,
-    lineValue: 91,
-    color: '#175F8C',
+    focusGroup: "Commute",
+    values: [96, 84, 128],
   },
   {
-    focusGroup: 'Network',
-    value: 46,
-    lineValue: 40,
-    color: '#175F8C',
+    focusGroup: "Network",
+    values: [46, 70, 52],
   },
   {
-    focusGroup: 'Storage',
-    value: 46,
-    lineValue: 90,
-    color: '#175F8C',
+    focusGroup: "Storage",
+    values: [46, 24, 72],
   },
   {
-    focusGroup: 'On prem',
-    value: 30,
-    lineValue: 43,
-    color: '#175F8C',
+    focusGroup: "On prem",
+    values: [30, 60, 90],
   },
   {
-    focusGroup: 'Saas',
-    value: 68,
-    lineValue: 57,
-    color: '#175F8C',
+    focusGroup: "Saas",
+    values: [68, 60, 74],
   },
 ];
 
 const ChartComponent = async () => {
   return (
-    <ChartWrapper
-      chartTitle="3D Area Chart"
-      directoryPath="/src/app/charts/3D/area-chart"
-    >
+    <ChartWrapper chartTitle="3D Area Chart" directoryPath="/src/app/charts/3D/area-chart">
       <ChartUtil data={data} />
     </ChartWrapper>
   );

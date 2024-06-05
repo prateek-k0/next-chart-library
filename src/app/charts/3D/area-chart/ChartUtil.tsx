@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  useState,
-  useMemo,
-  useRef,
-  useEffect,
-  useCallback,
-} from "react";
+import React, { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import * as d3 from "d3";
 import { ChartProps } from "@/types";
 import { useResizeObserver } from "@/hooks/useResizeObserver";
@@ -18,14 +12,8 @@ const ChartUtil = ({ data }: ChartProps) => {
   const [skewX, setSkewX] = useState<number>(0);
   const [skewY, setSkewY] = useState<number>(0);
 
-  const xShift = useMemo(
-    () => zAspect * Math.cos(zAngle * (Math.PI / 180)),
-    [zAngle, zAspect]
-  );
-  const yShift = useMemo(
-    () => zAspect * Math.sin(zAngle * (Math.PI / 180)),
-    [zAngle, zAspect]
-  );
+  const xShift = useMemo(() => zAspect * Math.cos(zAngle * (Math.PI / 180)), [zAngle, zAspect]);
+  const yShift = useMemo(() => zAspect * Math.sin(zAngle * (Math.PI / 180)), [zAngle, zAspect]);
 
   const configRef = useRef({
     svg: d3.select(null) as any,
@@ -42,20 +30,15 @@ const ChartUtil = ({ data }: ChartProps) => {
     svgHeight: 500,
     xScale: d3.scaleBand() as any,
     yScale: d3.scaleLinear() as any,
-    barFill: "#0d384d",
+    colorScheme: d3.schemeTableau10,
   });
   const self = configRef.current;
 
   const renderSVG = useCallback(() => {
     const container = containerRef.current as HTMLElement;
     if (!container) return;
-    self.width =
-      container.offsetWidth -
-      self.margin.left -
-      self.margin.right -
-      Math.abs(xShift);
-    self.height =
-      self.svgHeight - (self.margin.top + self.margin.bottom + yShift);
+    self.width = container.offsetWidth - self.margin.left - self.margin.right - Math.abs(xShift);
+    self.height = self.svgHeight - (self.margin.top + self.margin.bottom + yShift);
     self.svg = d3
       .select(container)
       .html("")
@@ -66,27 +49,23 @@ const ChartUtil = ({ data }: ChartProps) => {
       .append("g")
       .attr(
         "transform",
-        `translate(${
-          self.margin.left + (zAngle > 90 ? Math.abs(xShift) : 0)
-        }, ${self.margin.top + yShift})`
+        `translate(${self.margin.left + (zAngle > 90 ? Math.abs(xShift) : 0)}, ${
+          self.margin.top + yShift
+        })`
       );
   }, [self, xShift, yShift, zAngle]);
 
   const setScales = useCallback(() => {
     self.xScale = d3
-      .scaleBand()
+      .scalePoint()
       .range([0, self.width])
       .domain(data.map((s: any) => s.focusGroup))
-      .padding(0);
-    // self.barWidth = self.xScale.bandwidth() - 80;
-    const domainMax: any = d3.max(
-      data,
-      (d: { value: number }) => Math.ceil(d.value / 10) * 11
-    );
+      .padding(0.5);
+    const domainMax: any = d3.max(data, (d: { values: number[] }) => Math.max(...d.values));
     self.yScale = d3
       .scaleLinear()
       .rangeRound([self.height, 0])
-      .domain([0, domainMax])
+      .domain([0, domainMax * 1.25])
       .nice();
   }, [data, self]);
 
@@ -111,10 +90,7 @@ const ChartUtil = ({ data }: ChartProps) => {
           d3.select(nodes[i]).select("line").remove();
           d3.select(nodes[i])
             .append("path")
-            .attr(
-              "d",
-              `m ${0} ${0} l ${xShift} ${-yShift} l ${self.width} ${0}`
-            )
+            .attr("d", `m ${0} ${0} l ${xShift} ${-yShift} l ${self.width} ${0}`)
             .attr("stroke", "#666")
             .attr("stroke-width", 0.5);
         });
@@ -126,172 +102,120 @@ const ChartUtil = ({ data }: ChartProps) => {
       });
   }, [self, xShift, yShift]);
 
-  const renderArea = useCallback(() => {
-    const generateFaceFront: any = d3
-      .area()
-      .x((d: any) => self.xScale(d.focusGroup))
-      .y1((d: any) => self.yScale(d.lineValue))
-      .y0(self.height)
-      .curve(d3.curveLinear);
-    const generateFaceBack: any = d3
-      .area()
-      .x((d: any) => self.xScale(d.focusGroup) + xShift)
-      .y1((d: any) => self.yScale(d.lineValue) - yShift)
-      .y0(self.height - yShift)
-      .curve(d3.curveLinear);
-
-    const areaPathContainer = self.chart
-      .append("g")
-      .attr("class", "area-container");
-    const spacer = 0;
-    // render top surface
-    const topSurfaceContainer = areaPathContainer
-      .append("g")
-      .attr("class", "top-surface");
-    for (let i = 0; i < data.length - 1; i++) {
-      const d1 = data[i];
-      const d2 = data[i + 1];
-
-      const [dx1, dx2] = [
-        self.xScale(d1.focusGroup) + self.xScale.bandwidth() / 2 - spacer,
-        self.xScale(d1.focusGroup) +
-          xShift +
-          self.xScale.bandwidth() / 2 -
-          spacer,
-      ];
-      const [dy1, dy2] = [
-        self.yScale(d1.lineValue),
-        self.yScale(d1.lineValue) - yShift,
-      ];
-
-      const [dx3, dx4] = [
-        self.xScale(d2.focusGroup) +
-          xShift +
-          self.xScale.bandwidth() / 2 +
-          spacer,
-        self.xScale(d2.focusGroup) + self.xScale.bandwidth() / 2 + spacer,
-      ];
-      const [dy3, dy4] = [
-        self.yScale(d2.lineValue) - yShift,
-        self.yScale(d2.lineValue),
-      ];
-
-      const polyString = [
-        [dx1, dy1].join(","),
-        [dx2, dy2].join(","),
-        [dx3, dy3].join(","),
-        [dx4, dy4].join(","),
-      ].join(" ");
-      topSurfaceContainer
+  const render3DArea = useCallback(
+    (
+      areaGroup: SVGGElement,
+      points: [number, number][],
+      xDepth: number,
+      yDepth: number,
+      xOffset: number = 0,
+      yOffset: number = 0,
+      areaFill: string = "darkcyan"
+    ) => {
+      const areaPathContainer = d3.select(areaGroup);
+      const generateFaceFront: any = d3
+        .area<[number, number]>()
+        .x((d) => d[0] + xOffset)
+        .y1((d) => d[1] - yOffset)
+        .y0(self.height - yOffset)
+        .curve(d3.curveLinear);
+      const generateFaceBack: any = d3
+        .area<[number, number]>()
+        .x((d) => d[0] + xDepth + xOffset)
+        .y1((d) => d[1] - yDepth - yOffset)
+        .y0(self.height - yDepth - yOffset)
+        .curve(d3.curveLinear);
+      // left surface
+      const leftFace = areaPathContainer
         .append("polygon")
-        .attr("points", polyString)
-        .attr("stroke", "#ff0070")
-        .attr("fill", "#ff007090")
+        .attr(
+          "points",
+          `${points[0][0] + xOffset},${self.height - yOffset} 
+            ${points[0][0] + xDepth + xOffset},${self.height - yDepth - yOffset}  
+            ${points[0][0] + xDepth + xOffset},${points[0][1] - yDepth - yOffset} 
+            ${points[0][0] + xOffset},${points[0][1] - yOffset}`
+        )
+        .attr("stroke", "#fff")
+        .attr("fill", areaFill)
         .attr("stroke-width", 1);
+      // right surface:
+      const endPoint = points.slice(-1)[0];
+      const rightFace = areaPathContainer
+        .append("polygon")
+        .attr(
+          "points",
+          `${endPoint[0] + xOffset},${endPoint[1] - yOffset} 
+            ${endPoint[0] + xDepth + xOffset},${endPoint[1] - yDepth - yOffset}  
+            ${endPoint[0] + xDepth + xOffset},${self.height - yDepth - yOffset} 
+            ${endPoint[0] + xOffset},${self.height - yOffset}`
+        )
+        .attr("stroke", "#fff")
+        .attr("fill", areaFill)
+        .attr("stroke-width", 1);
+      // back surface
+      areaPathContainer
+        .append("path")
+        .datum(points)
+        .attr("d", generateFaceBack)
+        .attr("stroke-width", "1px")
+        .attr("fill", areaFill)
+        .attr("stroke", "#fff");
+      // top surface
+      for (let i = 0; i < points.length - 1; i++) {
+        const d1 = zAngle < 90 ? points[i] : points[points.length - 1 - i];
+        const d2 = zAngle < 90 ? points[i + 1] : points[points.length - 1 - i - 1];
+        const [dx1, dx2] = [d1[0] + xOffset, d1[0] + xDepth + xOffset];
+        const [dy1, dy2] = [d1[1] - yOffset, d1[1] - yDepth - yOffset];
+        const [dx3, dx4] = [d2[0] + xOffset + xDepth, d2[0] + xOffset];
+        const [dy3, dy4] = [d2[1] - yDepth - yOffset, d2[1] - yOffset];
+        const polyString = [
+          [dx1, dy1].join(","),
+          [dx2, dy2].join(","),
+          [dx3, dy3].join(","),
+          [dx4, dy4].join(","),
+        ];
+        areaPathContainer
+          .append("polygon")
+          .attr("points", polyString.join(" "))
+          .attr("stroke", "#fff")
+          .attr("fill", areaFill)
+          .attr("stroke-width", 1);
+      }
+      if (zAngle < 90) rightFace.raise();
+      else leftFace.raise();
+      // front surface
+      areaPathContainer
+        .append("path")
+        .datum(points)
+        .attr("d", generateFaceFront)
+        .attr("stroke-width", "1px")
+        .attr("fill", areaFill)
+        .attr("stroke", "#fff");
+    },
+    [self, zAngle]
+  );
+
+  const renderArea = useCallback(() => {
+    const nSeries = Math.min(...data.map((d: any) => d.values.length));
+    const xDepth = xShift / nSeries;
+    const yDepth = yShift / nSeries;
+    for (let i = nSeries - 1; i >= 0; i--) {
+      const points = data.map((d: any): [number, number] => [
+        self.xScale(d.focusGroup),
+        self.yScale(d.values[i]),
+      ]);
+      const areaNode = self.chart.append("g").attr("class", "area-container").node() as SVGGElement;
+      render3DArea(
+        areaNode,
+        points,
+        xDepth,
+        yDepth,
+        i * xDepth,
+        i * yDepth,
+        self.colorScheme[nSeries - i]
+      );
     }
-    // surface for curves (slower)
-    // const lineGen: any = d3.line()
-    //   .curve(d3.curveCardinal)
-    //   .x((d: any) => self.xScale(d.focusGroup) + self.xScale.bandwidth() / 2)
-    //   .y((d: any) => self.yScale(d.lineValue));
-    // const traceLine = topSurfaceContainer.append('path')
-    //   .attr('class', 'trace-line')
-    //   .attr('stroke', 'red')
-    //   .attr('fill', 'none')
-    //   .attr('d', lineGen(data));
-    // const traceLineNode = (traceLine.node() as SVGPathElement);
-    // const pathLength = traceLineNode.getTotalLength();
-    // const precision = 12;
-    // for(let p = 0; p <= Math.ceil(pathLength + precision); p += precision) {
-    //   const currentPoint = p + precision / 2;
-    //   const { x, y } = traceLineNode.getPointAtLength(currentPoint) as SVGPoint;
-    //   topSurfaceContainer
-    //     .append('line')
-    //     .attr('stroke', '#ff0070')
-    //     .attr('stroke-width', precision)
-    //     .attr('x1', x)
-    //     .attr('y1', y)
-    //     .attr('x2', x + xShift)
-    //     .attr('y2', y - yShift);
-    // }
-
-    // left surface
-    topSurfaceContainer
-      .append("polygon")
-      .attr(
-        "points",
-        `${self.xScale(data[0].focusGroup) + self.xScale.bandwidth() / 2},${
-          self.height
-        } 
-          ${
-            self.xScale(data[0].focusGroup) +
-            self.xScale.bandwidth() / 2 +
-            xShift
-          },${self.height - yShift}  
-          ${
-            self.xScale(data[0].focusGroup) +
-            self.xScale.bandwidth() / 2 +
-            xShift -
-            spacer
-          },${self.yScale(data[0].lineValue) - yShift} 
-          ${
-            self.xScale(data[0].focusGroup) +
-            self.xScale.bandwidth() / 2 -
-            spacer
-          },${self.yScale(data[0].lineValue)}`
-      )
-      .attr("stroke", "#ff0070")
-      .attr("fill", "#ff007090")
-      .attr("stroke-width", 1);
-
-    // right surface:
-    const endPoint = data.slice(-1)[0];
-    topSurfaceContainer
-      .append("polygon")
-      .attr(
-        "points",
-        `${
-          self.xScale(endPoint.focusGroup) +
-          self.xScale.bandwidth() / 2 +
-          spacer
-        },${self.yScale(endPoint.lineValue)} 
-          ${
-            self.xScale(endPoint.focusGroup) +
-            self.xScale.bandwidth() / 2 +
-            spacer +
-            xShift
-          },${self.yScale(endPoint.lineValue) - yShift}  
-          ${
-            self.xScale(endPoint.focusGroup) +
-            self.xScale.bandwidth() / 2 +
-            xShift
-          },${self.height - yShift} 
-          ${self.xScale(endPoint.focusGroup) + self.xScale.bandwidth() / 2},${
-          self.height
-        }`
-      )
-      .attr("stroke", "#ff0070")
-      .attr("fill", "#ff007090")
-      .attr("stroke-width", 1);
-
-    // back surface
-    areaPathContainer
-      .append("path")
-      .style("transform", `translateX(${self.xScale.bandwidth() / 2}px)`)
-      .attr("d", () => generateFaceBack(data))
-      .attr("stroke-width", "1px")
-      .attr("fill", "#ff007060")
-      .attr("stroke", "#ff007060");
-
-    // front surface
-    areaPathContainer
-      .append("path")
-      .style("transform", `translateX(${self.xScale.bandwidth() / 2}px)`)
-      .attr("d", () => generateFaceFront(data))
-      .attr("stroke-width", "1px")
-      .attr("fill", "#ff007060")
-      .attr("stroke", "#ff007060");
-  }, [self, xShift, yShift, data]);
+  }, [self, xShift, yShift, data, render3DArea]);
 
   const renderFunc = useCallback(() => {
     const container = containerRef.current as HTMLElement;
