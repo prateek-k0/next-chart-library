@@ -5,8 +5,12 @@ export interface DataItemType {
 }
 
 export interface TreeNode extends DataItemType {
-  children: TreeNode[] | any[];
+  // children: TreeNode[];
+  // _children: TreeNode[];
   depth: number;
+  x?: number,
+  y?: number,
+  isCollapsed: boolean,
 }
 
 export interface DataType {
