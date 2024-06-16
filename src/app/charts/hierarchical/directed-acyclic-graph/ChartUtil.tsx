@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useCallback, useRef } from "react";
 import * as d3 from "d3";
-import { useResizeObserver } from "@/hooks/useResizeObserver";
 import { DataType, TreeNode } from "./data";
 
 const ChartUtil = ({ data }: { data: DataType }) => {

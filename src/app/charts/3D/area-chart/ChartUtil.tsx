@@ -79,28 +79,60 @@ const ChartUtil = ({ data }: ChartProps) => {
         d.selectAll("line").remove();
         d.selectAll("text").attr("font-weight", 400).attr("font-size", "12px");
       });
-    self.chart
-      .append("g")
-      .attr("class", "grid")
-      .call(d3.axisLeft(self.yScale).tickSize(-self.width).tickSizeOuter(0))
-      .call((d: any) => {
-        d.select(".domain").style("stroke", "#666");
-        d.selectAll(".tick text").attr("x", "-10");
-        d.selectAll(".tick").each((data: any, i: number, nodes: any[]) => {
-          d3.select(nodes[i]).select("line").remove();
-          d3.select(nodes[i])
-            .append("path")
-            .attr("d", `m ${0} ${0} l ${xShift} ${-yShift} l ${self.width} ${0}`)
-            .attr("stroke", "#666")
-            .attr("stroke-width", 0.5);
+      if(zAngle < 90) {
+        self.chart
+        .append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(self.yScale).tickSize(-self.width).tickSizeOuter(0))
+        .call((d: any) => {
+          d.select(".domain").style("stroke", "#666");
+          d.selectAll(".tick text").attr("x", "-10");
+          d.selectAll(".tick").each((data: any, i: number, nodes: any[]) => {
+            d3.select(nodes[i]).select("line").remove();
+            d3.select(nodes[i])
+              .append("path")
+              .attr(
+                "d",
+                `m ${0} ${0} l ${xShift} ${-yShift} l ${self.width} ${0}`
+              )
+              .attr("stroke", "#666")
+              .attr("stroke-width", 0.5);
+          });
+          d.append("line")
+            .attr("x2", self.width)
+            .attr("y1", self.height)
+            .attr("y2", self.height)
+            .attr("stroke", "#666");
         });
-        d.append("line")
-          .attr("x2", self.width)
-          .attr("y1", self.height)
-          .attr("y2", self.height)
-          .attr("stroke", "#666");
-      });
-  }, [self, xShift, yShift]);
+      } else {
+        self.chart
+        .append("g")
+        .attr("class", "grid")
+        .call(d3.axisRight(self.yScale).tickSize(-self.width).tickSizeOuter(0))
+        .attr('transform', `translate(${[self.width, 0]})`)
+        .call((d: any) => {
+          d.select(".domain").style("stroke", "#666");
+          d.selectAll(".tick text").attr("x", "10");
+          d.selectAll(".tick").each((data: any, i: number, nodes: any[]) => {
+            d3.select(nodes[i]).select("line").remove();
+            d3.select(nodes[i])
+              .append("path")
+              .attr(
+                "d",
+                `m ${0} ${0} l ${xShift} ${-yShift} l ${-self.width} ${0}`
+              )
+              .attr("stroke", "#666")
+              .attr("stroke-width", 0.5);
+          });
+          d.append("line")
+            .attr('x1', -self.width)
+            .attr("x2", 0)
+            .attr("y1", self.height)
+            .attr("y2", self.height)
+            .attr("stroke", "#666");
+        });
+      }
+  }, [self, xShift, yShift, zAngle]);
 
   const render3DArea = useCallback(
     (
