@@ -1,8 +1,8 @@
-# Next Chart Library
+# Chart Library
 
 **[Deployment link](https://next-chart-library.vercel.app/)**
 
-**A collection of D3.js chart components to be used in Next.js framework for quick prototyping.**
+**A showcase for charts built with D3.js.**
 
 ## Built with:
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![D3.js](https://img.shields.io/badge/d3%20js-F9A03C?style=for-the-badge&logo=d3.js&logoColor=white) 

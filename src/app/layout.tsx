@@ -9,8 +9,8 @@ import React from 'react';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next.js Chart Library",
-  description: "A collection of D3 chart components for usage in Next.js projects for quick prototyping",
+  title: "Chart Library",
+  description: "A showcase for charts built with D3.js.",
 };
 
 export default async function RootLayout({
