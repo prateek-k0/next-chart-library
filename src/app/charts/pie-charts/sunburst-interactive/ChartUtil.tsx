@@ -1,4 +1,5 @@
 "use client";
+// reference: https://observablehq.com/@d3/zoomable-sunburst
 import React, { useEffect, useCallback, useRef } from "react";
 import * as d3 from "d3";
 import { useResizeObserver } from "@/hooks/useResizeObserver";
