@@ -1,4 +1,5 @@
 "use client";
+// reference: https://d3-graph-gallery.com/graph/density2d_hexbin.html
 import { ChartProps } from "@/types";
 import React, { useRef, useCallback, useEffect } from "react";
 import { useResizeObserver } from "@/hooks/useResizeObserver";
