@@ -1,4 +1,5 @@
 "use client";
+// reference: https://d3-graph-gallery.com/graph/chord_colors.html
 import React, { useEffect, useCallback, useRef } from "react";
 import * as d3 from "d3";
 import { useResizeObserver } from "@/hooks/useResizeObserver";
