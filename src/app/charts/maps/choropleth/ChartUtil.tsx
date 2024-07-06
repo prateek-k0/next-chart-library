@@ -1,4 +1,5 @@
 "use client";
+// reference: https://d3-graph-gallery.com/graph/choropleth_hover_effect.html
 import { ChartProps } from "@/types";
 import React, { useRef, useCallback, useEffect } from "react";
 import { useResizeObserver } from "@/hooks/useResizeObserver";
