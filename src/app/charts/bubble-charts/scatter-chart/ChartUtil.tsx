@@ -1,4 +1,5 @@
 "use client";
+// reference: https://d3-graph-gallery.com/graph/bubble_tooltip.htmlp
 import { ChartProps } from "@/types";
 import React, { useEffect, useCallback, useRef } from "react";
 import { useResizeObserver } from "@/hooks/useResizeObserver";
