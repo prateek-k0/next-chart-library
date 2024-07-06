@@ -8,7 +8,6 @@ import bubbleScatter from '@/../public/chart-thumbnails/bubble-scatter.png'
 import chordColored from '@/../public/chart-thumbnails/chord-colored.png'
 import choroplethMap from '@/../public/chart-thumbnails/choropleth.png'
 import contourDensity from '@/../public/chart-thumbnails/contour-density.png'
-import density from '@/../public/chart-thumbnails/density.png'
 import heatmapTooltip from '@/../public/chart-thumbnails/heatmap-tooltip.png'
 import hexbinDensity from '@/../public/chart-thumbnails/hexbin-density.png'
 import histogramDouble from '@/../public/chart-thumbnails/histogram-double.png'
@@ -23,7 +22,6 @@ const imageList: { img: StaticImageData, link: string, title: string }[] = [
   { img: chordColored, link: '/charts/pie-charts/chord-chart', title: 'Chord chart' },
   { img: choroplethMap, link: '/charts/maps/choropleth', title: 'Choropleth map' },
   { img: contourDensity, link: '/charts/area-charts/contour-density', title: 'Contour Density' },
-  { img: density, link: '/charts/area-charts/density', title: 'Density' },
   { img: heatmapTooltip, link: '/charts/heatmaps/interactive', title: 'Interactive Heatmap' },
   { img: hexbinDensity, link: '/charts/area-charts/hexbin-density', title: 'Hexbin density' },
   { img: histogramDouble, link: '/charts/histograms/double-histogram', title: 'Double Histogram' },
