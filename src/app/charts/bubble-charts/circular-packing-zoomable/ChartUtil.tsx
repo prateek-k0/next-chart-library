@@ -1,4 +1,5 @@
 "use client";
+// reference: https://gist.github.com/mbostock/7607535
 import { ChartProps } from "@/types";
 import React, { useEffect, useCallback, useRef } from "react";
 import { useResizeObserver } from "@/hooks/useResizeObserver";
